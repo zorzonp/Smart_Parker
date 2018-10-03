@@ -41,19 +41,33 @@ Visiting the Website via HTTP will display a tempoary test HTML page
 users table 
 
 +---------------+-------------+------+-----+---------+-------+
+
 | Field         | Type        | Null | Key | Default | Extra |
 
 +---------------+-------------+------+-----+---------+-------+
+
 | username      | varchar(20) | NO   | PRI | NULL    |       |
+
 | first_name    | varchar(20) | YES  |     | NULL    |       |
+
 | last_name     | varchar(20) | YES  |     | NULL    |       |
+
 | password      | char(100)   | YES  |     | NULL    |       |
+
 | salt          | char(10)    | YES  |     | NULL    |       |
+
 | license_num   | varchar(7)  | YES  |     | NULL    |       |
+
 | license_state | varchar(2)  | YES  |     | NULL    |       |
+
 | make          | varchar(10) | YES  |     | NULL    |       |
+
 | modle         | varchar(20) | YES  |     | NULL    |       |
+
 | year          | int(11)     | YES  |     | NULL    |       |
+
 | color         | varchar(25) | YES  |     | NULL    |       |
+
 | venmo_uname   | varchar(20) | YES  |     | NULL    |       |
+
 +---------------+-------------+------+-----+---------+-------+
