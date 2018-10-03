@@ -25,18 +25,19 @@ Visiting the Website via HTTP will display a tempoary test HTML page
 
 
 ## ACCESS DB INSTANCE:
+	Must be signed into the EC2 instance.
 	mysql -h tutorial-db-instance.cdcizhetgsdg.us-east-2.rds.amazonaws.com -P 3306 -u tutorial_user -p
 
 
 ## SETUP:
 
-## Install MySQL on EC2 Instance
+### Install MySQL on EC2 Instance
 	sudo yum install mysql56-server.x86_64
 
-## Add IP to known list:
+### Add IP to known list:
    https://checkip.amazonaws.com
 
-## Other Info: 
+# Other Info: 
 users table 
 +---------------+-------------+------+-----+---------+-------+
 | Field         | Type        | Null | Key | Default | Extra |
