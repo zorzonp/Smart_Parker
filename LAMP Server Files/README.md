@@ -39,8 +39,10 @@ Visiting the Website via HTTP will display a tempoary test HTML page
 
 # Other Info: 
 users table 
+
 +---------------+-------------+------+-----+---------+-------+
 | Field         | Type        | Null | Key | Default | Extra |
+
 +---------------+-------------+------+-----+---------+-------+
 | username      | varchar(20) | NO   | PRI | NULL    |       |
 | first_name    | varchar(20) | YES  |     | NULL    |       |
