@@ -26,7 +26,7 @@ Visiting the Website via HTTP will display a tempoary test HTML page
 
 ## ACCESS DB INSTANCE:
 	Must be signed into the EC2 instance.
-	mysql -h tutorial-db-instance.cdcizhetgsdg.us-east-2.rds.amazonaws.com -P 3306 -u tutorial_user -p
+	mysql -h smart-parker-db-instance.cdcizhetgsdg.us-east-2.rds.amazonaws.com -P 3306 -u smartparker_user -p
 
 
 ## SETUP:
