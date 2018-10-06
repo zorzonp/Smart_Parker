@@ -24,7 +24,12 @@
                                 <input type="text" name="salt" placeholder="1234567890"></input><br/>
                                 <input type="submit" name="submit" id="submit" value="Submit">
                         </form>
-                        <!-- <?php include "add_customer.php";?>-->
+                        
+                        <form action="lookup_license.php" method="post" id="form">
+                                <input type="text" name="license_plate" placeholder="License Plate Number"></input><br/>
+                                <input type="text" name="state" placeholder="State"></input><br/>
+                                <input type="submit" name="submit" id="submit" value="Submit">
+                        </form>
                 </div>
                 <div>
                 </div>
