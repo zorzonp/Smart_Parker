@@ -52,8 +52,10 @@ Index:
 			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/lookup_license.php
 
 			Inputs: Must be sent using POST.
-				license_plate:	STRING
-				state:			STRING
+				license_plate:			STRING
+				state:					STRING
+				password(as as hash):	STRING *note: this is the password of the owner/operator making the request
+				username:				STRING *note: this is the username of the owner/operator making the request
 
 			Outputs: A JSON object: {"status":<INTEGER>,
 									 "message":<STRING>,
@@ -84,10 +86,14 @@ Index:
 			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/add_owner.php
 
 			Inputs: Must be sent using POST. 
+				username:				STRING
+				password(as a hash):	STRING 
+				salt:					STRING
 
-			Outputs: A JSON object.
+			Outputs: A JSON object: {"status":<INTEGER>,
+									 "message":<STRING>}
 
-			Description:
+			Description: Adds an onwer/operator to the owner's table.
 
 			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
 
@@ -98,8 +104,14 @@ Index:
 			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/get_salt.php
 
 			Inputs: Must be sent using POST.
+				username:				STRING
 
-			Outputs: A JSON object.
+			Outputs: A JSON object: {"status":<INTEGER>,
+									 "message":<STRING>,
+									 "result":{
+									 			"salt":<STRING>
+									 		  }
+									}
 
 			Description: This PHP script will return the salt for any user in the owner table.
 				The purpose of this script is to allow the calling program to get the salt so that the password can be hashed by 
