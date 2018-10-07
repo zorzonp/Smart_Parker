@@ -1,4 +1,12 @@
 <?php
+/*******************************************************************
+ * Author:      Peter Zorzonello                                   *
+ * Class:       EC601-A1                                           *
+ * File:        add_customer.php                                   *
+ * Description: Adds a driver to the users database. Used for      *
+ *              signing up for the service.                        *
+ *******************************************************************/
+
         /*Includes the creds we need to connect to the DB instance*/
         include "../inc/dbinfo.inc";
 
@@ -38,7 +46,6 @@
 
 
                         $value = $statment->execute(array(':username' => $uname, ':first_name' => $fname, ':last_name' => $lname, ':password' => $pword, ':salt' => $salt , ':license_num' => $lnum, ':license_state' => $lstate, ':make' => $make, ':modle' => $modle, ':year' => $year, ':color' => $color, ':venmo_uname' => $venmo));
-
 
                         if ($value == true){
                                 $response["status"] = 1;
