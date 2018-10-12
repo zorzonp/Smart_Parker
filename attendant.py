@@ -9,12 +9,19 @@
 
 # Changes:
 # 10-02-2018 - cm - Created file.
+# 10-03-2018 - cm - Added actual code.
+# 10-08-2018 - cm - Finished test code, querying text files and polling for image files.
 
 import os
 import queue
 import threading
 import time
+import sqlite3
 
+# DATABASE COLUMNS
+# occupancy - TABLE times (number, state, timeIn, timeOut)
+# pricing - TABLE standard (hours, price)
+# registered - TABLE users (number, state, account)
 
 REQ_TIMEOUT = 10 # Timeout for requests.
 TOP_LEVEL_PATH = './'
@@ -60,64 +67,66 @@ def camera_manager(gateID, direction, cameraAddr, alprQ, messageQ):
                 print('Thread:' + str(gateID) + ' - ' + 'Timeout on ' + str(gateID) + ' request.')
 #####################################################################
 
-def get_entry(plateString):
+def get_entry(plateString, plateState):
     t = -1
-    with open(TOP_LEVEL_PATH + 'occupancy.txt','r') as f:
-        for line in f:
-            p = line.split(',')
-            if(len(p) == 2):
-                if(p[0].strip().capitalize() == plateString.capitalize()):
-                    t = p[1]
-    try:
-        t = float(t)
-    except ValueError:
-        print('Error: Bad entry time.')
-        t = -1
-    return t
 
+    conn = sqlite3.connect('occupancy.db') # Establish database connection.
+    c = conn.cursor()
+    # Search for current person in database.
+    c.execute("SELECT * FROM times WHERE number=? AND state=? AND timeOut IS NULL",(plateString, plateState))
+    results = c.fetchall()
+    conn.close() # Close the connection.
+    if(len(results) > 0):
+        t = results[0][1]
+    else:
+        print('Error: No match')
+
+    return t
 # log_exit()
 # Purpose:  This function queries the local occupancy database for
 #           the time that an exiting vehicle entered the structure
 #           and appends the exit time.
-def log_exit(plateString,exit):
-
-#### TEMPORARY ####
+def log_exit(plateString, plateState, exit):
     t = -1
-    fOut = open(TOP_LEVEL_PATH + 'temp.txt','w+')
-    with open(TOP_LEVEL_PATH + 'occupancy.txt','r') as f:
-        for line in f:
-            p = line.split(',')
-            if(len(p) > 2):
-                fOut.write(line)
-            else:
-                if(p[0].strip().capitalize() == plateString.capitalize()):
-                    t = 0
-                    fOut.write(line.strip() + ',' + str(exit) + '\n')
-                else:
-                    fOut.write(line)
-    fOut.close()
-    os.remove(TOP_LEVEL_PATH + 'occupancy.txt')
-    os.rename(TOP_LEVEL_PATH + 'temp.txt',TOP_LEVEL_PATH + 'occupancy.txt')
+
+    conn = sqlite3.connect('occupancy.db') # Establish database connection.
+    c = conn.cursor()
+    # Search for current person in datatbase.
+    c.execute("SELECT * FROM times WHERE number=? AND state=? AND timeOut IS NULL",(plateString, plateState))
+    entries = c.fetchall()
+    if(len(entries == 0):
+        print('Error: No match')
+    elif(len(entries) > 1):
+        print('Error: Duplicate entries')
+    else:
+        # Update the exit time.
+        c.execute("UPDATE times SET timeOut=? WHERE number=? AND state=? AND timeIn=? AND timeOut IS NULL",(entries[0][0],entries[0][1],entries[0][2]))
+        t = 0
+    
+    conn.commit()
+    conn.close()
     return t
-###################
-#   result = Query occupancy database(plateString)
-#   if(result == Not found):
-#       return -1
-#   return result
+
 
 # log_entry()
 # Purpose:  This function logs the entry time of the vehicle with
 #           the given plate number to the occupancy database.
-def log_entry(plateString, timestamp):
-#### TEMPORARY ####
+def log_entry(plateString, plateState, timestamp):
     result = 0
-    check = get_entry(plateString) # Check if the plate was already logged.
-    if(check < 0): # If plate not found, log its entry time.
-        with open(TOP_LEVEL_PATH + 'occupancy.txt','a') as f:
-            f.write(plateString + ',' + str(timestamp) + '\n')
-    else:
-        print('Plate already logged.')
+    conn = sqlite3.connect('occupancy.db')
+    c = conn.cursor()
+    # Search database for duplicate entry.
+    c.execute("SELECT * FROM times WHERE number=? AND state=? AND timeOut IS NULL",(plateString,plateState))
+    entries = c.fetchall()
+    if(len(entries) > 0):
+        print('Error: Plate already logged.')
         result = -1
+    else:
+        c.execute("INSERT INTO times VALUES (?,?,?,NULL)",(plateString,plateState,timestamp))
+    
+    conn.commit()
+    conn.close()
+
     return result
 ###################
 #   result = Post to database(plateString, timestamp)
