@@ -77,7 +77,7 @@ def get_entry(plateString, plateState):
     results = c.fetchall()
     conn.close() # Close the connection.
     if(len(results) > 0):
-        t = results[0][1]
+        t = results[0][2]
     else:
         print('Error: No match')
 
@@ -94,13 +94,13 @@ def log_exit(plateString, plateState, exit):
     # Search for current person in datatbase.
     c.execute("SELECT * FROM times WHERE number=? AND state=? AND timeOut IS NULL",(plateString, plateState))
     entries = c.fetchall()
-    if(len(entries == 0):
+    if(len(entries) == 0):
         print('Error: No match')
     elif(len(entries) > 1):
         print('Error: Duplicate entries')
     else:
         # Update the exit time.
-        c.execute("UPDATE times SET timeOut=? WHERE number=? AND state=? AND timeIn=? AND timeOut IS NULL",(entries[0][0],entries[0][1],entries[0][2]))
+        c.execute("UPDATE times SET timeOut=? WHERE number=? AND state=? AND timeIn=? AND timeOut IS NULL",(exit,entries[0][0],entries[0][1],entries[0][2]))
         t = 0
     
     conn.commit()
@@ -138,14 +138,21 @@ def log_entry(plateString, plateState, timestamp):
 # Purpose:  This function queries the remote database for the
 #           given plate to ensure that the person is a registered
 #           user.
-def check_plate(plateString):
+def check_plate(plateString, plateState):
 #### TEMPORARY ####
     result = -1
-    with open(TOP_LEVEL_PATH + 'registered.txt','r') as f:
-        for line in f:
-            p = line.split(',')
-            if(p[0].strip().capitalize() == plateString.capitalize()):
-                result = 0
+    conn = sqlite3.connect('registered.db')
+    c = conn.cursor()
+    # Query for matching user in database.
+    c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
+    entries = c.fetchall()
+    if(len(entries) == 1):
+        result = 0
+    elif(len(entries) == 0):
+        print("User not registered.")
+    else:
+        print("Error: Duplicate entry")
+    conn.close()
     return result
 #   result = Query from remote database (plateString)
 #   if(result == Not Found):
@@ -156,45 +163,48 @@ def check_plate(plateString):
 # Purpose:  Calculate the price to charge the customer based
 #           on the pricing table in the local database.
 def calc_price(inTime, outTime):
-#   duration = outTime - inTime
-#   result = Get Price from Database(duration)
-#   return result
-    duration = outTime - inTime
-    with open(TOP_LEVEL_PATH + 'pricing.txt','r') as f:
-        t = -1
-        p = -1
-        for line in f: 
-            price = line.split(',')
-            try:
-                t = float(price[0])*3600/TIME_DILATION # Calculate time for this price.
-                p = float(price[1])
-            except ValueError:
-                print('Warning: invalid line in pricing DB')
-                t = -1
-                p = -1
-            if(duration < t): # Reached time
-                break
-    return p # Return the price
+    duration = (outTime - inTime)*TIME_DILATION/3600 # Calculate time in hours
+    conn = sqlite3.connect('pricing.db')
+    c = conn.cursor()
+
+    # Find all pricing entries greater than the duration.
+    c.execute("SELECT * FROM standard WHERE hours > ? ORDER BY price ASC",(duration,))
+    # Grab only the first entry.
+    entries = c.fetchone()
+    if(len(entries) == 0):
+        # Get the entry for extended duration.
+        c.execute("SELECT * FROM standard WHERE hours=-1")
+        entries = c.fetchone()
+        if(len(entries) == 0):
+            print("Error: No extended duration price.")
+            return -1
+    conn.close() # Close SQL connection.
+    p = entries[1] # Get the price.
+    return p # Return the price.
                 
 # send_invoice()
 # Purpose:  This function queries the remote database for the
 #           PayPal account name associated with the plate, and
 #           submit an invoice.
-def send_invoice(plateString, price):
-#### TEMPORARY ####
+def send_invoice(plateString,plateState,price):
     acct = ''
-    with open(TOP_LEVEL_PATH + 'registered.txt','r') as f:
-        for line in f:
-            d = line.split(',')
-            if(d[0].strip() == plateString):
-                acct = d[1].strip()
-                break
-    if(acct == ''):
+    conn = sqlite3.connect('registered.db')
+    c = conn.cursor()
+
+    # Query database for PayPal account name.
+    c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
+    entries = c.fetchall()
+    conn.close() # Close SQL connection.
+    if(len(entries) == 0):
+        print("Error, no match")
         return -1
-    print('Sending invoice for $%0.2f to account %s' % (price,acct))
-    return 0
-#   acct = Query Remote DB(plateString)
-#   send invoice to PayPal(acct,price)
+    elif(len(entries) > 1):
+        print("Error: duplicate entries")
+        return -1
+    else:
+        acct = entries[0][2]
+        print('Sending invoice for %0.2f to account %s' % (price,acct))
+        return 0
 
 # open_gate()
 # Purpose:  This function opens the gate.  Probably won't do
@@ -228,24 +238,26 @@ if __name__ == '__main__':
             req = q.get()
             #try:
             result = req['image'].split('.')[0]
+            state = result.split('_')[0]
+            number = result.split('_')[1]
             time.sleep(5)
             #except TimeoutErr:
             if(req['direction'] == 'in'):
-                r = check_plate(result)
+                r = check_plate(number,state)
                 mQ[req['ID']].put({'result':result,'ID':req['ID']})
                 if(r == 0):
-                    r = log_entry(result, req['timestamp'])
+                    r = log_entry(number,state,req['timestamp'])
                     if(r == 0):
                         open_gate(req['ID'])
             elif(req['direction'] == 'out'):
-                timeIn = get_entry(result)
+                timeIn = get_entry(number, state)
                 mQ[req['ID']].put({'result':result,'ID':req['ID']})
                 if(timeIn >= 0): # If valid timestamp,
-                    r = log_exit(result,req['timestamp']) # Log the exit time.
+                    r = log_exit(number,state,req['timestamp']) # Log the exit time.
                     if(r >= 0):
                         p = calc_price(timeIn,req['timestamp']) # Calculate the price.
                         if(p > 0):
-                            send_invoice(result, p)
+                            send_invoice(number,state, p)
                         open_gate(req['ID'])
         except KeyboardInterrupt:
             print('Exiting...')
