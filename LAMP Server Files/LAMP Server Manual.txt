@@ -1,0 +1,147 @@
+LAMP Server Manual
+
+Index:
+1) Intro
+2) Scripts
+	2.1)	add_customer.php
+	2.2)	lookup_license.php
+	2.3)	get_salt.php
+	2.4)	add_owner.php
+3) Tables
+	3.1)	users
+	3.2)	owners
+
+1 Intro:
+	LAMP is an acronym for Linux, Apache, MySQL, PHP. The LAMP server is being run on an Amazon EC2 Linux instance. 
+	Ther is one database on the server and two tables. The database is smart_parker_user. The two tables are users and owners.
+	The users table is used to store all the user info for drivers who sign up for this service. The owners table is used to store information about the owners/operators of parking structurs that use Smart_Parker. This is used by the server to verify the owner before releasing user info to them.
+
+
+2 Scripts:
+
+	2.1	ADD_CUSTOMER
+
+			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/add_customer.php
+
+			Inputs: Must be sent using POST. 
+				username:				STRING
+				first_name:				STRING 
+				last_name: 				STRING
+				password(as a hash):	STRING 
+				salt:					STRING
+				license_num:			STRING
+				license_state:			STRING
+				make:					STRING
+				modle:					STRING 
+				year:					INTEGER
+				color:					STRING
+				venmo_uname:			STRING
+
+			Outputs: A JSON object: {"status":<INTEGER>,
+									 "message":<STRING>
+									}
+
+			Description: Adds a user to the user table.
+
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+
+
+
+	2.2	LOOKUP_LICENSE
+
+			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/lookup_license.php
+
+			Inputs: Must be sent using POST.
+				license_plate:			STRING
+				state:					STRING
+				password(as as hash):	STRING *note: this is the password of the owner/operator making the request
+				username:				STRING *note: this is the username of the owner/operator making the request
+
+			Outputs: A JSON object: {"status":<INTEGER>,
+									 "message":<STRING>,
+									 "result":{
+									 			"username":<STRING>,
+									 			"first_name":<STRING>,
+									 			"last_name":<STRING>,
+									 			"password":<STRING>,
+									 			"salt":<STRING>,
+									 			"license_num":<STRING>,
+									 			"license_state":<STRING>,
+									 			"make":<STRING>,
+									 			"modle":<STRING>,
+									 			"year":<STRING>,
+									 			"color":<STRING>,
+									 			"venmo_uname":<STRING>
+									 			}
+									 }
+
+			Description: Looks up a user by their license plate and state.
+
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+
+
+
+	2.3	ADD_OWNER
+
+			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/add_owner.php
+
+			Inputs: Must be sent using POST. 
+				username:				STRING
+				password(as a hash):	STRING 
+				salt:					STRING
+
+			Outputs: A JSON object: {"status":<INTEGER>,
+									 "message":<STRING>}
+
+			Description: Adds an onwer/operator to the owner's table.
+
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+
+
+
+	2.4	GET_SALT
+
+			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/get_salt.php
+
+			Inputs: Must be sent using POST.
+				username:				STRING
+
+			Outputs: A JSON object: {"status":<INTEGER>,
+									 "message":<STRING>,
+									 "result":{
+									 			"salt":<STRING>
+									 		  }
+									}
+
+			Description: This PHP script will return the salt for any user in the owner table.
+				The purpose of this script is to allow the calling program to get the salt so that the password can be hashed by 
+				the calling program and then the has can be sent to the server to be verified by any requests for information. 
+
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+3 Tables
+	3.1	users
+		+---------------+-------------+------+-----+---------+-------+
+		| Field         | Type        | Null | Key | Default | Extra |
+		+---------------+-------------+------+-----+---------+-------+
+		| username      | varchar(20) | NO   | PRI | NULL    |       |
+		| first_name    | varchar(20) | YES  |     | NULL    |       |
+		| last_name     | varchar(20) | YES  |     | NULL    |       |
+		| password      | char(100)   | YES  |     | NULL    |       |
+		| salt          | char(10)    | YES  |     | NULL    |       |
+		| license_num   | varchar(7)  | YES  |     | NULL    |       |
+		| license_state | varchar(2)  | YES  |     | NULL    |       |
+		| make          | varchar(10) | YES  |     | NULL    |       |
+		| modle         | varchar(20) | YES  |     | NULL    |       |
+		| year          | int(11)     | YES  |     | NULL    |       |
+		| color         | varchar(25) | YES  |     | NULL    |       |
+		| venmo_uname   | varchar(20) | YES  |     | NULL    |       |
+		+---------------+-------------+------+-----+---------+-------+
+
+	3.2 owners
+		+----------+--------------+------+-----+---------+-------+
+		| Field    | Type         | Null | Key | Default | Extra |
+		+----------+--------------+------+-----+---------+-------+
+		| username | varchar(20)  | NO   | PRI | NULL    |       |
+		| salt     | char(10)     | NO   |     | NULL    |       |
+		| password | varchar(100) | NO   |     | NULL    |       |
+		+----------+--------------+------+-----+---------+-------+
