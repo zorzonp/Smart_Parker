@@ -1,0 +1,30 @@
+Owner/Operator Software Design Document
+
+Charles McPherson, Jr.
+9/24/2018
+EC601 A1
+
+I. Components:
+
+    1. SmartParker Dashboard: This program will allow the operator to:
+         - View history of in and out times, and license plate numbers.
+         - View current occupancy.
+         - Adjust pricing structure.
+         - Modify special access lists (if implemented).
+         acting as a high-level interface to the local databases.
+
+    2. SmartParker Attendant:  This program is the persistent process which:
+        - Analyzes incoming images.
+        - Reads license plate numbers.
+        - Logs in/out times. 
+        - Queries remote database. 
+        - Controls access.
+        - Displays limited real-time information.
+    
+    3. History Database: A database of access history (logs of license plate numbers and in/out times):
+
+    4. Occupants Database: A database of current occupants (in times only, obviously):
+
+    5. Pricing Database: A database of the fee structure(s):
+
+    6. Special Access Database: A database for users with special pricing or permits (if implemented).
