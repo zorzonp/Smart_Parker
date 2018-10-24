@@ -54,10 +54,23 @@
                                                 /*get all the requested info*/
                                                 $rows = $statment->fetchAll(PDO::FETCH_ASSOC);
 
+                                                $response_to_send = array();
+                                                $response_to_send["first_name"] = $rows[0]["first_name"];
+                                                $response_to_send["last_name"] = $rows[0]["last_name"];
+                                                $response_to_send["username"] = $rows[0]["username"];
+                                                $response_to_send["license_plate"] = $rows[0]["license_num"];
+                                                $response_to_send["state"] = $rows[0]["license_state"];
+                                                $response_to_send["make"] = $rows[0]["make"];
+                                                $response_to_send["model"] = $rows[0]["model"];
+                                                $response_to_send["year"] = $rows[0]["year"];
+                                                $response_to_send["color"] = $rows[0]["color"];
+                                                $response_to_send["email"] = $rows[0]["email"];
+                                                $response_to_send["good_standing"] = $rows[0]["good_standing"];
+
                                                 /*return the results*/
                                                 $response["status"] = 1;
                                                 $response["message"] = "Success";
-                                                $response["result"] = $rows[0];
+                                                $response["result"] = $response_to_send;
 
                                         }else{ /*if the query returned no results, the user could not be found*/
                                                 $response["status"] = 0;
