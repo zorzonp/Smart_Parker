@@ -17,6 +17,9 @@ import queue
 import threading
 import time
 import sqlite3
+import base64
+import json
+from urllib import request
 
 # DATABASE COLUMNS
 # occupancy - TABLE times (number, state, timeIn, timeOut)
@@ -26,6 +29,8 @@ import sqlite3
 REQ_TIMEOUT = 10 # Timeout for requests.
 TOP_LEVEL_PATH = './'
 TIME_DILATION = 200 # Dilate time by a factor of 200 for testting
+ALPR_KEY = '../ALPR_Key.txt' # Location of ALPR key
+MIN_CONF = 70 # Minimum confidence for ALPR result.
 
 # camera_manager()
 # Purpose:  This function manages one gate at the structure and
@@ -50,23 +55,39 @@ def camera_manager(gateID, direction, cameraAddr, alprQ, messageQ):
 ###################
             t = time.time() # Obtain a timestamp.
             # Build the ALPR request
-            request = {'image':contents[0],
+            request = {'image':camera + '/' + contents[0],
                         'direction':direction,
                         'ID':gateID,
                         'timestamp':t}
             alprQ.put(request) # Enqueue the request
-#### TEMPORARY ####
-#           Delete the image
-            os.remove(camera + '/' + contents[0])
-            time.sleep(5)
-###################
             try:
                 # Wait for a response from the main thread.
                 response = messageQ.get(timeout = REQ_TIMEOUT)
             except queue.Empty:
                 print('Thread:' + str(gateID) + ' - ' + 'Timeout on ' + str(gateID) + ' request.')
+            # Delete the image, now that the main process is done.
+            os.remove(camera + '/' + contents[0])
 #####################################################################
 
+# load_alpr_key()
+# Purpose:  This function reads in the OpenALRP API key from an external
+#           text file.  This prevents accidental inclusion on GitHub.
+# Outputs:  key - The API key.  If the file is not opened, an empty string
+#           is returned.
+def load_alpr_key():
+    key = '' # Initialize to empty in case the file cannot be opened.
+    try:
+        # Attempt to open the file.
+        with open(ALPR_KEY,'r') as f:
+            key = f.readline().strip() # Read in the key, removing whitespace.
+    except OSError:
+        print("Error: Unable to obtain key from file '%s'" % ALPR_KEY)
+    return key # Return the key.
+
+# get_entry()
+# Purpose:  This function queries the database to determine the time of
+#           entry for a vehicle with the provided license plate number
+#           and state.
 def get_entry(plateString, plateState):
     t = -1
 
@@ -140,6 +161,7 @@ def log_entry(plateString, plateState, timestamp):
 #           user.
 def check_plate(plateString, plateState):
 #### TEMPORARY ####
+    print("Checking plate: State: %s Number :%s" % (plateState, plateString)) 
     result = -1
     conn = sqlite3.connect('registered.db')
     c = conn.cursor()
@@ -215,6 +237,43 @@ def open_gate(gateID):
     print('Opening Gate %d' % (gateID))
 ###################
 
+# read_plate()
+# Purpose:  This function calls the open ALPR API to determine the
+#           license plate state and number.
+# Inputs:   fileName - The path to the file.
+#           key - The API key.
+# Outputs:  plate - A dictionary containing the number and state of the plate.
+def read_plate(fileName, key):
+    plate = {'number':'','state':''}
+    try:
+        with open(fileName, 'rb') as img:
+            # Convert the image to a 64-bit representation to meet the 
+            # OpenALPR requirements.
+            img_64 = base64.b64encode(img.read())
+    except OSError:
+        print('Error: Image file could not be opened.')
+        return plate
+    # Issue request to OpenALPR API
+    url = 'https://api.openalpr.com/v2/recognize_bytes?country=us&secret_key=%s&topn=1' % key
+    r = request.urlopen(url,data=img_64)
+    obj = json.loads(r.read()) # Load response into a JSON object.
+    if(obj['error'] == False): # Ensure there is no error before proceeding.
+        if(len(obj['results']) > 0): # If result was obtained,
+            conf = obj['results'][0]['confidence'] # Ensure confidence is higher than minimum.
+            if(conf >= MIN_CONF):
+                # Pull out plate number and state information.
+                plate['number'] = obj['results'][0]['plate'].upper()
+                plate['state'] = obj['results'][0]['region'].upper()
+            else:
+                print('Error: ALPR result has low confidence. conf = %d%%' % conf)
+        else:
+            print('Error: No ALPR result returned.')
+    else:
+        # Print OpenALPR error.
+        print('Error: Open ALPR error = %s' % obj['error'])
+    return plate # Return plate information.
+
+
 if __name__ == '__main__':
 #### TEMPORARY ####
 #   if(folder does not exist):
@@ -223,6 +282,7 @@ if __name__ == '__main__':
         os.mkdir(TOP_LEVEL_PATH)
 ###################
     params = [[0,'in','camera0'],[1,'out','camera1']]
+    openalpr_key = load_alpr_key()
     t = []
     mQ = []
     q = queue.Queue()
@@ -237,28 +297,30 @@ if __name__ == '__main__':
         try:
             req = q.get()
             #try:
-            result = req['image'].split('.')[0]
-            state = result.split('_')[0]
-            number = result.split('_')[1]
-            time.sleep(5)
+            result = read_plate(req['image'],openalpr_key)
+            if(result['number'] != ''): # If the result is good, extract the state and number.
+                state = result['state']
+                number = result['number']
             #except TimeoutErr:
-            if(req['direction'] == 'in'):
-                r = check_plate(number,state)
-                mQ[req['ID']].put({'result':result,'ID':req['ID']})
-                if(r == 0):
-                    r = log_entry(number,state,req['timestamp'])
+                if(req['direction'] == 'in'):
+                    r = check_plate(number,state)
+                    mQ[req['ID']].put({'result':result,'ID':req['ID']})
                     if(r == 0):
-                        open_gate(req['ID'])
-            elif(req['direction'] == 'out'):
-                timeIn = get_entry(number, state)
+                        r = log_entry(number,state,req['timestamp'])
+                        if(r == 0):
+                            open_gate(req['ID'])
+                elif(req['direction'] == 'out'):
+                    timeIn = get_entry(number, state)
+                    mQ[req['ID']].put({'result':result,'ID':req['ID']})
+                    if(timeIn >= 0): # If valid timestamp,
+                        r = log_exit(number,state,req['timestamp']) # Log the exit time.
+                        if(r >= 0):
+                            p = calc_price(timeIn,req['timestamp']) # Calculate the price.
+                            if(p > 0):
+                                send_invoice(number,state, p)
+                            open_gate(req['ID'])
+            else:
                 mQ[req['ID']].put({'result':result,'ID':req['ID']})
-                if(timeIn >= 0): # If valid timestamp,
-                    r = log_exit(number,state,req['timestamp']) # Log the exit time.
-                    if(r >= 0):
-                        p = calc_price(timeIn,req['timestamp']) # Calculate the price.
-                        if(p > 0):
-                            send_invoice(number,state, p)
-                        open_gate(req['ID'])
         except KeyboardInterrupt:
             print('Exiting...')
             break
