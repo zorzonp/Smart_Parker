@@ -13,8 +13,8 @@ Index:
 
 1 Intro:
 	LAMP is an acronym for Linux, Apache, MySQL, PHP. The LAMP server is being run on an Amazon EC2 Linux instance. 
-	Ther is one database on the server and two tables. The database is smart_parker_user. The two tables are users and owners.
-	The users table is used to store all the user info for drivers who sign up for this service. The owners table is used to store information about the owners/operators of parking structurs that use Smart_Parker. This is used by the server to verify the owner before releasing user info to them.
+	There is one database on the server and two tables. The database is smart_parker_user. The two tables are users and owners.
+	The users table is used to store all the user info for drivers who sign up for this service. The owners table is used to store information about the owners/operators of parking structures that use Smart_Parker. This is used by the server to verify the owner before releasing user info to them.
 
 
 2 Scripts:
@@ -43,7 +43,7 @@ Index:
 
 			Description: Adds a user to the user table.
 
-			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
 
 
 
@@ -77,7 +77,7 @@ Index:
 
 			Description: Looks up a user by their license plate and state.
 
-			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
 
 
 
@@ -93,9 +93,9 @@ Index:
 			Outputs: A JSON object: {"status":<INTEGER>,
 									 "message":<STRING>}
 
-			Description: Adds an onwer/operator to the owner's table.
+			Description: Adds an owner/operator to the owner's table.
 
-			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
 
 
 
@@ -117,7 +117,7 @@ Index:
 				The purpose of this script is to allow the calling program to get the salt so that the password can be hashed by 
 				the calling program and then the has can be sent to the server to be verified by any requests for information. 
 
-			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occured. 
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
 3 Tables
 	3.1	users
 		+---------------+-------------+------+-----+---------+-------+
