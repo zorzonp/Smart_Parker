@@ -23,7 +23,7 @@
 
                 $response = array();
 
-                if(!empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['salt']) && !empty($_POST['license_plate']) && !empty($_POST['state']) && !empty($_POST['make']) && !empty($_POST['model']) && !empty($_POST['year']) && !empty($_POST['color']) && !empty($_POST['venmo_username'])){
+                if(!empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['salt']) && !empty($_POST['license_plate']) && !empty($_POST['state']) && !empty($_POST['make']) && !empty($_POST['model']) && !empty($_POST['year']) && !empty($_POST['color']) && !empty($_POST['email'])){
 
                         $fname = $_POST['first_name'];
                         $lname = $_POST['last_name'];
@@ -33,19 +33,20 @@
                         $lnum = $_POST['license_plate'];
                         $lstate = $_POST['state'];
                         $make = $_POST['make'];
-                        $modle = $_POST['model'];
+                        $model = $_POST['model'];
                         $year = $_POST['year'];
                         $color = $_POST['color'];
-                        $venmo = $_POST['venmo_username'];
+                        $email = $_POST['email'];
+                        $good_standing = True;
 
-                        $query = "INSERT INTO users (username, first_name, last_name, password, salt, license_num, license_state, make, modle, year, color, venmo_uname) VALUES(:username, :first_name, :last_name, :password, :salt, :license_num, :license_state, :make, :modle, :year, :color, :venmo_uname)";
+                        $query = "INSERT INTO users (username, first_name, last_name, password, salt, license_num, license_state, make, model, year, color, email, good_standing) VALUES(:username, :first_name, :last_name, :password, :salt, :license_num, :license_state, :make, :model, :year, :color, :email, :good_standing)";
 
 
 
                         $statment = $connection->prepare($query);
 
 
-                        $value = $statment->execute(array(':username' => $uname, ':first_name' => $fname, ':last_name' => $lname, ':password' => $pword, ':salt' => $salt , ':license_num' => $lnum, ':license_state' => $lstate, ':make' => $make, ':modle' => $modle, ':year' => $year, ':color' => $color, ':venmo_uname' => $venmo));
+                        $value = $statment->execute(array(':username' => $uname, ':first_name' => $fname, ':last_name' => $lname, ':password' => $pword, ':salt' => $salt , ':license_num' => $lnum, ':license_state' => $lstate, ':make' => $make, ':model' => $model, ':year' => $year, ':color' => $color, ':email' => $email, ':good_standing' => $good_standing));
 
                         if ($value == true){
                                 $response["status"] = 1;
