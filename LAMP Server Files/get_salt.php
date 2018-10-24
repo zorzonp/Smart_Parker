@@ -22,27 +22,40 @@
 
                 $response = array();
 
-                if(!empty($_POST['username'])){
+                if(!empty($_POST['username']) && !empty($_POST['type'])){
 
                         $uname = $_POST['username'];
+                        $type = $_POST['type'];
 
-                        $query = "SELECT salt FROM owners WHERE username = :username";
-                        $statment = $connection->prepare($query);
+                        if ($type == 'user' || $type == 'owner'){
+                                
+                                if ($type == 'user'){
+                                        $query = "SELECT salt FROM users WHERE username = :username";
+                                }elseif ($type == 'owner') {
+                                        $query = "SELECT salt FROM owners WHERE username = :username";
+                                }
+                                
+                                $statment = $connection->prepare($query);
 
-                        $statment->execute(array(':username' => $uname));
+                                $statment->execute(array(':username' => $uname));
 
-                        if ($statment->rowCount()>0){
-                                /*get all the requested info*/
-                                $rows = $statment->fetchAll(PDO::FETCH_ASSOC);
+                                if ($statment->rowCount()>0){
+                                        /*get all the requested info*/
+                                        $rows = $statment->fetchAll(PDO::FETCH_ASSOC);
 
-                                /*return the results*/
-                                $response["status"] = 1;
-                                $response["message"] = "Success";
-                                $response["result"] = $rows[0];
+                                        /*return the results*/
+                                        $response["status"] = 1;
+                                        $response["message"] = "Success";
+                                        $response["result"] = $rows[0];
 
-                        }else{ /*if the query returned no results, the user could not be found*/
+                                }else{ /*if the query returned no results, the user could not be found*/
+                                        $response["status"] = 0;
+                                        $response["message"] = "Falure, could not find user";
+                                }
+
+                        }else{ /*the request did not provide a valid type*/
                                 $response["status"] = 0;
-                                $response["message"] = "Falure, could not find user";
+                                $response["message"] = "Falure, type $type is not valid."; 
                         }
 
 
