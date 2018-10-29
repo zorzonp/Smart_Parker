@@ -3,7 +3,7 @@
  * Author:      Peter Zorzonello                                   *
  * Class:       EC601-A1                                           *
  * File:        update_driver_info.php                             *
- * Description: Adds an owner/operator to the owners table         *
+ * Description: Allows the driver to update their personal info.   *
  *******************************************************************/
 
         /*Includes the creds we need to connect to the DB instance*/
