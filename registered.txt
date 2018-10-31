@@ -1,4 +1,0 @@
-ABCDEF, plate_abcdef
-123456, plate_123456
-GHIJKL, plate_ghijkl
-789012, plate_789012
