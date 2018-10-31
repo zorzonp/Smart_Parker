@@ -184,6 +184,7 @@
                                 <input type="text" name="username" placeholder="Username"></input><br/>
                                 <input type="text" name="new_uname" placeholder="New Username"></input><br/>
                                 <input type="text" name="password" placeholder="Password"></input><br/>
+                                <input type="text" name="new_password" placeholder="New Password"></input><br/>
                                 <input type="text" name="email" placeholder="Email"></input><br/> 
                                 <input type="text" name="salt" placeholder="1234567890"></input><br/>
                                 <input type="submit" name="submit" id="submit" value="Submit">
