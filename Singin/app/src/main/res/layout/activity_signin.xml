@@ -7,18 +7,18 @@
     android:baselineAligned="false"
     android:weightSum="1">
 
-    <TextView
-        android:id="@+id/title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_weight="0.23"
-        android:text="       Smart_parker"
-        android:textColor="#000000"
-        android:textSize="40sp" />
+    <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_weight="0.23"-->
+        <!--android:text="       Smart_parker"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="40sp" />-->
 
     <TableRow>
         <TextView />
