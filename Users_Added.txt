@@ -1,0 +1,24 @@
+List of users added to database for Attendant testing.
+{'First Name':'Alan',
+ 'Last Name' :'King',
+ 'License Plate Number':'CZU734',
+ 'State':'AK',
+ 'Make':'Ford',
+ 'Model':'Escape',
+ 'Year':1999,
+ 'Color':'Blue',
+ 'Username':'AKing',
+ 'Password':'AKing123',
+ 'Email':'aking@fake.url'}
+
+{'First Name':'Arthur',
+ 'Last Name':'Remmington',
+ 'License Plate Number':'324AZY',
+ 'State':'AR',
+ 'Make':'Subaru',
+ 'Model':'Forester',
+ 'Year':2008,
+ 'Color':'Red',
+ 'Username':'ARemmington',
+ 'Password':'ARemmington123',
+ 'Email':'aremmington@fake.url'}

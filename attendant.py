@@ -20,6 +20,7 @@ import sqlite3
 import base64
 import json
 from urllib import request
+from urllib import parse
 
 # DATABASE COLUMNS
 # occupancy - TABLE times (number, state, timeIn, timeOut)
@@ -163,19 +164,32 @@ def check_plate(plateString, plateState):
 #### TEMPORARY ####
     print("Checking plate: State: %s Number :%s" % (plateState, plateString)) 
     result = -1
-    conn = sqlite3.connect('registered.db')
-    c = conn.cursor()
-    # Query for matching user in database.
-    c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
-    entries = c.fetchall()
-    if(len(entries) == 1):
-        result = 0
-    elif(len(entries) == 0):
-        print("User not registered.")
+    params = {'username':'CMcPhers',
+        'password':'1234',
+        'license_plate':plateString,
+        'state':plateState}
+    payload = parse.urlencode(params).encode('ascii') # Encode payload in urlencoded format. 
+    url = 'https://smartparker.cf/lookup_license.php'
+    resp = request.urlopen(url,data=payload)
+    obj = json.loads(resp.read()) # Get output into dictionary object.
+    if(obj['status'] == 0):
+        print('Error from remote DB: %s' % obj['message'])
     else:
-        print("Error: Duplicate entry")
-    conn.close()
+        result = 0
     return result
+    #conn = sqlite3.connect('registered.db')
+    #c = conn.cursor()
+    # Query for matching user in database.
+    #c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
+    #entries = c.fetchall()
+    #if(len(entries) == 1):
+    #    result = 0
+    #elif(len(entries) == 0):
+    #    print("User not registered.")
+    #else:
+    #    print("Error: Duplicate entry")
+    #conn.close()
+    #return result
 #   result = Query from remote database (plateString)
 #   if(result == Not Found):
 #       return -1
@@ -210,23 +224,38 @@ def calc_price(inTime, outTime):
 #           submit an invoice.
 def send_invoice(plateString,plateState,price):
     acct = ''
-    conn = sqlite3.connect('registered.db')
-    c = conn.cursor()
-
-    # Query database for PayPal account name.
-    c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
-    entries = c.fetchall()
-    conn.close() # Close SQL connection.
-    if(len(entries) == 0):
-        print("Error, no match")
-        return -1
-    elif(len(entries) > 1):
-        print("Error: duplicate entries")
+    params = {'username':'CMcPhers',
+        'password':'1234',
+        'license_plate':plateString,
+        'state':plateState}
+    payload = parse.urlencode(params).encode('ascii') # Encode in urlencoded format.
+    url = 'https://smartparker.cf/lookup_license.php'
+    resp = request.urlopen(url,data=payload) # Query the database.
+    obj = json.loads(resp.read()) # Load response into dictionary object.
+    if(obj['status'] == 0):
+        print('Error in remote DB: %s' % obj['message'])
         return -1
     else:
-        acct = entries[0][2]
+        acct = obj['result']['email']
         print('Sending invoice for %0.2f to account %s' % (price,acct))
         return 0
+    #conn = sqlite3.connect('registered.db')
+    #c = conn.cursor()
+
+    # Query database for PayPal account name.
+    #c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
+    #entries = c.fetchall()
+    #conn.close() # Close SQL connection.
+    #if(len(entries) == 0):
+    #    print("Error, no match")
+    #    return -1
+    #elif(len(entries) > 1):
+    #    print("Error: duplicate entries")
+    #    return -1
+    #else:
+    #    acct = entries[0][2]
+    #    print('Sending invoice for %0.2f to account %s' % (price,acct))
+    #    return 0
 
 # open_gate()
 # Purpose:  This function opens the gate.  Probably won't do
