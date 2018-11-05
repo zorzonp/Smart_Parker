@@ -26,11 +26,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="username："
+            android:text="@string/uname_login"
             android:textSize="48px" />
 
         <EditText
-            android:id="@+id/account"
+            android:id="@+id/username_text_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="440px"
@@ -42,11 +42,152 @@
         android:baselineAligned="false"
         android:orientation="vertical">
         <TextView />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="first_name："
+            android:text="@string/fname_signup"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/first_name_text_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laname_signup"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/last_name_text_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password_signup"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/license_num"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/license_num_text_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:minWidth="440px"
+            android:textSize="48px" />
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/state"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/model"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year"
             android:textSize="48px" />
 
         <EditText
@@ -62,166 +203,12 @@
 
     <TableRow android:layout_marginTop="20px">
         <TextView />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="last_name："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:minWidth="440px"
-            android:textSize="48px" />
-
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="password："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="440px"
-            android:textSize="48px"
-            android:inputType="textPassword"/>
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="salt："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:minWidth="440px"
-            android:textSize="48px" />
-
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="licence_num："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="440px"
-            android:textSize="48px"
-            android:inputType="textPassword"/>
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="licence_state："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="440px"
-            android:textSize="48px"
-            android:inputType="textPassword"/>
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="make："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="440px"
-            android:textSize="48px"
-            android:inputType="textPassword"/>
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="module："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="440px"
-            android:textSize="48px"
-            android:inputType="textPassword"/>
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="year："
-            android:textSize="48px" />
-
-        <EditText
-            android:id="@+id/pwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:minWidth="440px"
-            android:textSize="48px" />
-
-        <TextView />
-    </TableRow>
-
-    <TableRow android:layout_marginTop="20px">
-        <TextView />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="color："
+            android:text="@string/color"
             android:textSize="48px" />
 
         <EditText
@@ -240,7 +227,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="venmo_uname："
+            android:text="@string/email"
             android:textSize="48px" />
 
         <EditText

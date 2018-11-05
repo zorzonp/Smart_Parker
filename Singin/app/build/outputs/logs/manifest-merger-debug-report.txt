@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/baf501e20f110fbb11a288b1224b09e9/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/05a63a7c9c8dc3ba0f3927e433d10f33/AndroidManifest.xml:17:1-22:12
@@ -31,25 +31,29 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/peterzorzonello/.grad
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/21a3ef2dc7ddaa8fab66e6b44b75e996/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3aa3c2af37ebff6edd111c489744b697/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/4a5e278461cd2e74529b43656e006a05/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
 		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-21:12
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-30:12
 		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:5-19:19
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:7:5-28:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:22:5-94
@@ -59,31 +63,45 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/peterzorzone
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:11:9-40
-activity#com.example.xcliang.singin.Signin
-ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:12:9-18:20
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:13:9-40
+activity#com.example.xcliang.singin.LogInActivity
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:12:19-41
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:13:13-17:29
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:17-69
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:25-66
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:18:27-74
+activity#com.example.xcliang.singin.Signin
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:21:9-44
+	android:name
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:21:19-41
+activity#com.example.xcliang.singin.DisplayUser
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:22:9-27:20
+	android:name
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:22:19-46
+intent-filter#category:name:android.intent.category.DEFAULT
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:23:13-26:29
+category#android.intent.category.DEFAULT
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:25:17-75
+	android:name
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:25:27-73
 uses-sdk
 INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
