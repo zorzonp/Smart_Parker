@@ -20,6 +20,7 @@ public class User implements Parcelable {
     String password_hash;
 
 
+    //This is a constructor for the class. It creates an instance of the class with provided data
     User(String firstName, String lastName, String username, String license_plate,
          String license_state, String make, String model, Integer year, String color, String email,
          Boolean good_standing, String password_hash){
@@ -40,6 +41,7 @@ public class User implements Parcelable {
 
     }
 
+    //required by Parcel library, auto generated
     protected User(Parcel in) {
         firstName = in.readString();
         lastName = in.readString();
@@ -55,6 +57,7 @@ public class User implements Parcelable {
         password_hash = in.readString();
     }
 
+    //required by Parcel library, auto generated
     public static final Creator<User> CREATOR = new Creator<User>() {
         @Override
         public User createFromParcel(Parcel in) {
@@ -67,23 +70,7 @@ public class User implements Parcelable {
         }
     };
 
-    public void setUser(String firstName, String lastName, String username, String license_plate,
-                        String license_state, String make, String model, Integer year, String color, String email,
-                        Boolean good_standing, String password_hash){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.license_plate = license_plate;
-        this.license_state = license_state;
-        this.make = make;
-        this.model = model;
-        this.year = year.toString();
-        this.color = color;
-        this.email = email;
-        this.good_standing = good_standing.toString();
-        this.password_hash = password_hash;
-    }
-
+    //Useful for debugging. Prints all the fields.
     public void print(){
         System.out.println("First Name: "+firstName);
         System.out.println("Last Name: "+lastName);
@@ -99,11 +86,13 @@ public class User implements Parcelable {
         System.out.println("Password: "+password_hash);
     }
 
+    //required by Parcel library
     @Override
     public int describeContents(){
         return 0;
     }
 
+    //required by Parcel library, sends the data
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(firstName);

@@ -38,7 +38,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_log_in.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_log_in.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml">
           <provider editor-type-id="text-editor">
             <state />
@@ -69,24 +69,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_display_user.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_display_user.xml">
-          <provider editor-type-id="text-editor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LogInActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/LogInActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-297">
-              <caret line="142" column="34" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="34" />
+            <state relative-caret-position="975">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#MyTask#0;class#LogInActivity#0" />
+                <element signature="class#MyGetUserTask#0;class#LogInActivity#0" />
+                <element signature="method#login#0;class#LogInActivity#0" />
+                <element signature="method#getUserInfo#0;class#LogInActivity#0" />
+                <element signature="method#getSalt#0;class#LogInActivity#0" />
               </folding>
             </state>
           </provider>
@@ -95,7 +89,7 @@
       <file leaf-file-name="ServerHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/ServerHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
+            <state relative-caret-position="957">
               <caret line="74" column="58" lean-forward="true" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DisplayUser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DisplayUser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/DisplayUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="64" column="90" selection-start-line="64" selection-start-column="90" selection-end-line="64" selection-end-column="90" />
+            <state relative-caret-position="492">
+              <caret line="71" column="85" selection-start-line="71" selection-start-column="85" selection-end-line="71" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,8 +113,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1056">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="1080">
+              <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1895#1896#0" expanded="true" />
@@ -2398,13 +2392,13 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_signin.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/User.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_display_user.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/LogInActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/ServerHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/DisplayUser.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/DisplayUser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_display_user.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/LogInActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/User.java" />
       </list>
     </option>
   </component>
@@ -2652,6 +2646,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#MyTask#0;class#LogInActivity#0" />
+            <element signature="class#MyGetUserTask#0;class#LogInActivity#0" />
+            <element signature="method#login#0;class#LogInActivity#0" />
+            <element signature="method#getUserInfo#0;class#LogInActivity#0" />
+            <element signature="method#getSalt#0;class#LogInActivity#0" />
           </folding>
         </state>
       </provider>
@@ -2727,6 +2725,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#MyTask#0;class#LogInActivity#0" />
+            <element signature="class#MyGetUserTask#0;class#LogInActivity#0" />
+            <element signature="method#login#0;class#LogInActivity#0" />
+            <element signature="method#getUserInfo#0;class#LogInActivity#0" />
+            <element signature="method#getSalt#0;class#LogInActivity#0" />
           </folding>
         </state>
       </provider>
@@ -2823,7 +2825,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_display_user.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml">
       <provider editor-type-id="text-editor">
         <state />
       </provider>
@@ -2831,38 +2833,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1056">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1895#1896#0" expanded="true" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#2000#2001#0" expanded="true" />
-            <element signature="e#2045#2046#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_display_user.xml">
+      <provider editor-type-id="text-editor">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/ServerHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="74" column="58" lean-forward="true" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/DisplayUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="64" column="90" selection-start-line="64" selection-start-column="90" selection-end-line="64" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -2874,21 +2850,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/LogInActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="142" column="34" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="34" />
+        <state relative-caret-position="975">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#MyTask#0;class#LogInActivity#0" />
+            <element signature="class#MyGetUserTask#0;class#LogInActivity#0" />
+            <element signature="method#login#0;class#LogInActivity#0" />
+            <element signature="method#getUserInfo#0;class#LogInActivity#0" />
+            <element signature="method#getSalt#0;class#LogInActivity#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml">
-      <provider editor-type-id="text-editor">
-        <state />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/ServerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="74" column="58" lean-forward="true" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1895#1896#0" expanded="true" />
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#2000#2001#0" expanded="true" />
+            <element signature="e#2045#2046#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/xcliang/singin/DisplayUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="71" column="85" selection-start-line="71" selection-start-column="85" selection-end-line="71" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

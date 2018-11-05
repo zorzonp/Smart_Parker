@@ -208,6 +208,8 @@ public class LogInActivity extends AppCompatActivity {
         return null;
     }
 
+    //this procedure will query the server for the user's salt. You must provide the username
+    //for the salt you are requesting.
     public void getSalt(String username, String url_name) throws UnsupportedEncodingException {
 
         //encode the data we want to send to the server for this request
@@ -216,51 +218,25 @@ public class LogInActivity extends AppCompatActivity {
         data += "&" + URLEncoder.encode("type", "UTF-8") + "=" +
                 URLEncoder.encode("user", "UTF-8");
 
+
+        //communicate with the server
         String text = "";
+        text = helper.communicateWithServer(url_name, data);
 
-        BufferedReader reader=null;
 
-        //try and make a request to the server
-        try{
-            //create the URL
-            URL url = new URL(url_name);
-
-            //open the connection
-            URLConnection conn = url.openConnection();
-            conn.setDoOutput(true);
-            OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-
-            //write the data to the server
-            wr.write(data);
-            wr.flush();
-
-            //read the response from the server
-            reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-            StringBuilder sb = new StringBuilder();
-
-            String line = null;
-
-            //keep reading from the response until we get the whole thing
-            while((line = reader.readLine()) != null){
-                sb.append(line + "\n");
-
-            }
-
-            //convert the string builder into a String object we can use
-            text = sb.toString();
-
+        //process the returned data
+        try {
             //Create the JSON object from the returned text from the server.
             JSONObject obj = new JSONObject(text);
 
             //get the Status from the returned JSON object
             String status_str = obj.getString("status");
-            System.out.println("Object " +obj.toString());
+            System.out.println("Object " + obj.toString());
 
             //convert the Status from a string to an int
             Integer status = Integer.parseInt(status_str);
 
-            if (status == 1){ //the salt was returned
+            if (status == 1) { //the salt was returned
 
                 //get the result object inside the main object
                 JSONObject results = obj.getJSONObject("result");
@@ -271,32 +247,19 @@ public class LogInActivity extends AppCompatActivity {
                 JSONObject result_obj = new JSONObject(results_str);
 
                 salt = result_obj.getString("salt");
-                reader.close();
-                return;
 
 
-            }else{//if the request for a salt was not successful
+            } else {//if the request for a salt was not successful
+
                 String message = obj.getString("message");
                 System.out.println(message);
 
             }
 
 
-
-        }catch (Exception ex){
-            System.out.println("Error: " + ex.toString());
-
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        finally {
-            try{
-                //close the reader if still open.
-                reader.close();
-                return;
-            }catch (Exception ex){
-                System.out.println("Error: " + ex.toString());
-            }
-        }
-
     }
 
 

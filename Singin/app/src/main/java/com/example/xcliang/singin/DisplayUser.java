@@ -68,4 +68,11 @@ public class DisplayUser extends AppCompatActivity {
         Intent logoutIntent = new Intent(this, LogInActivity.class);
         startActivity(logoutIntent);
     }
+
+    //this procedure is used to go to the activity where a user can update their info
+    public void changeInfo(View view){
+        //navigate to the change info page
+        //Intent updateInfoIntent = new Intent(this, );
+        //startActivity(updateInfoIntent);
+    }
 }
