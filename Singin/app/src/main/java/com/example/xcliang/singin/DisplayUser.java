@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import static android.app.PendingIntent.getActivity;
@@ -55,12 +56,16 @@ public class DisplayUser extends AppCompatActivity {
         stateView.setText(driver.license_state);
         makeView.setText(driver.make);
         modelView.setText(driver.model);
-        yearView.setText(driver.year.toString());
+        yearView.setText(driver.year);
         colorView.setText(driver.color);
 
+    }
 
-
-
-
+    //this procedure is called to log the user out of the app
+    //this just means they will be returned to the login page and the fields will be empty
+    public void logout (View view){
+        //navigate to the login page
+        Intent logoutIntent = new Intent(this, LogInActivity.class);
+        startActivity(logoutIntent);
     }
 }

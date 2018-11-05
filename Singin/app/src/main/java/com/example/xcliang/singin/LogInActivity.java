@@ -32,6 +32,8 @@ public class LogInActivity extends AppCompatActivity {
     String salt = "";
     User driver;
 
+    ServerHelper helper = new ServerHelper();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,62 +133,6 @@ public class LogInActivity extends AppCompatActivity {
     }
 
 
-
-    //refactoring, this code is called each time we connect to the server.
-    //we can reuse it by making it a function
-    //TODO: move this to its own class
-    private String communicateWithServer(String url_name, String data){
-        String text = "";
-
-        BufferedReader reader=null;
-
-        //try and make a request to the server
-        try{
-            //create the URL
-            URL url = new URL(url_name);
-
-            //open the connection
-            URLConnection conn = url.openConnection();
-            conn.setDoOutput(true);
-            OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-
-            //write the data to the server
-            wr.write(data);
-            wr.flush();
-
-            //read the response from the server
-            reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-            StringBuilder sb = new StringBuilder();
-
-            String line = null;
-
-            //keep reading from the response until we get the whole thing
-            while((line = reader.readLine()) != null){
-                sb.append(line + "\n");
-
-            }
-
-            //convert the string builder into a String object we can use
-            text = sb.toString();
-
-
-
-        }catch (Exception ex){
-            System.out.println("Error: " + ex.toString());
-
-        }
-        finally {
-            try{
-                //close the reader if still open.
-                reader.close();
-            }catch (Exception ex){
-                System.out.println("Error: " + ex.toString());
-            }
-        }
-        return text;
-    }
-
     //This function will take a username, and password from the user
     //and send it as a POST request to url_name. It will read the response and inform the user.
     public User getUserInfo(String username, String password, String url_name)
@@ -203,7 +149,7 @@ public class LogInActivity extends AppCompatActivity {
                 URLEncoder.encode(password, "UTF-8");
 
         String json_str = "";
-        json_str = communicateWithServer(url_name, data);
+        json_str = helper.communicateWithServer(url_name, data);
 
         //make sure something was returned
         if(json_str != ""){
