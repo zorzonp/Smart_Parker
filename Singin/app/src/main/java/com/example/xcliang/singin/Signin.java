@@ -27,7 +27,7 @@ import org.json.JSONObject;
 
 
 
-public class Sign_up_test extends AppCompatActivity {
+public class Sign_up extends AppCompatActivity {
 
     EditText username_text;
     EditText firstname_text;
@@ -47,7 +47,7 @@ public class Sign_up_test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_test);
+        setContentView(R.layout.activity_signin);
 
         username_text = (EditText)findViewById(R.id.username_signup_field);
         firstname_text = (EditText)findViewById(R.id.firstname_signup_field);
@@ -74,7 +74,7 @@ public class Sign_up_test extends AppCompatActivity {
     }
 
     private void gotoLayout2(){
-        setContentView(R.layout.activity_sign_up_test_2);
+        setContentView(R.layout.activity_signin2);
         Button btn2=(Button)findViewById(R.id.btn_button2_1);
         Button btn3=(Button)findViewById(R.id.btn_button2_2);
 
@@ -94,7 +94,7 @@ public class Sign_up_test extends AppCompatActivity {
     }
 
     private void gotoLayout1(){
-        setContentView(R.layout.activity_sign_up_test);
+        setContentView(R.layout.activity_signin);
         Button btn1=(Button)findViewById(R.id.btn_button1);
         btn1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -105,7 +105,7 @@ public class Sign_up_test extends AppCompatActivity {
     }
 
     private void gotoLayout3(){
-        setContentView(R.layout.activity_sign_up_test_3);
+        setContentView(R.layout.activity_signin3);
         Button btn4=(Button)findViewById(R.id.btn_button3_1);
         btn4.setOnClickListener(new View.OnClickListener(){
             @Override
