@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.xcliang.singin.Signin" />
+        <activity android:name="com.example.xcliang.singin.Sign_up" />
         <activity android:name="com.example.xcliang.singin.DisplayUser" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

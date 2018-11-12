@@ -133,6 +133,11 @@ public class LogInActivity extends AppCompatActivity {
     }
 
 
+    public void signUp(View view){
+        Intent signupIntent = new Intent(this, Sign_up.class);
+        startActivity(signupIntent);
+    }
+
     //This function will take a username, and password from the user
     //and send it as a POST request to url_name. It will read the response and inform the user.
     public User getUserInfo(String username, String password, String url_name)

@@ -20,6 +20,7 @@
             android:id="@+id/venmoname_signup_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:minWidth="440px"
             android:textSize="48px" />
         <TextView />

@@ -41,6 +41,8 @@ public class Sign_up extends AppCompatActivity {
     EditText color_text;
     EditText venmo_uname;
 
+    User driver;
+
     String url = "https://smartparker.cf/add_customer.php";
 
 
@@ -71,6 +73,10 @@ public class Sign_up extends AppCompatActivity {
             }
         });
 
+//        driver = getinfo_signup(username_text.getText(), password_text, firstname_text, lastname_text,
+//                licencenum_text, licencestate_text, make_text, model_text, year_text, color_text,
+//                venmo_uname, url);
+
     }
 
     private void gotoLayout2(){
@@ -94,6 +100,7 @@ public class Sign_up extends AppCompatActivity {
     }
 
     private void gotoLayout1(){
+        //when the user hits the very first button on the very first sign up page
         setContentView(R.layout.activity_signin);
         Button btn1=(Button)findViewById(R.id.btn_button1);
         btn1.setOnClickListener(new View.OnClickListener(){
@@ -105,19 +112,57 @@ public class Sign_up extends AppCompatActivity {
     }
 
     private void gotoLayout3(){
+        //when the user hits the back button on the last sign up page
         setContentView(R.layout.activity_signin3);
         Button btn4=(Button)findViewById(R.id.btn_button3_1);
+
+        Button btnSubmit=(Button)findViewById(R.id.btn_button3_2);
+
+
         btn4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 gotoLayout2();
             }
         });
+
+        //when the submit button is pressed this is called
+        btnSubmit.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View v){
+               String username = username_text.getText().toString();
+               String password = password_text.getText().toString();
+               String fname = firstname_text.getText().toString();
+               String lname = lastname_text.getText().toString();
+               String license_num = licencenum_text.getText().toString();
+               String state = licencestate_text.getText().toString();
+               String make = make_text.getText().toString();
+               String model = model_text.getText().toString();
+               String year = year_text.getText().toString();
+               String color = color_text.getText().toString();
+               String venmo = venmo_uname.getText().toString();
+
+
+               try {
+                   driver = getinfo_signup(username, password, fname, lname, license_num, state, make,
+                           model, year, color, venmo, url);
+               } catch (UnsupportedEncodingException e) {
+                   e.printStackTrace();
+               }
+
+               //TODO: transition to the next page. send them the driver
+
+           }
+        });
     }
 
 
 
-    public User getinfo_signup(String username, String password, String firstname, String lastname, String licencenum, String licencestate, String make, String model, String year, String color, String venmo_uname, String url_name) throws UnsupportedEncodingException{
+
+    public User getinfo_signup(String username, String password, String firstname, String lastname,
+                               String licencenum, String licencestate, String make, String model,
+                               String year, String color, String venmo_uname, String url_name)
+            throws UnsupportedEncodingException {
 
         //create parameter sended to the server
         String data = URLEncoder.encode("username", "UTF-8") + "=" +
@@ -144,9 +189,9 @@ public class Sign_up extends AppCompatActivity {
                 URLEncoder.encode(venmo_uname, "UTF-8");
 
         String json_str = "";
-        json_str = sendpost(url, data);
+        json_str = sendpost(url_name, data);
 
-        if(json_str != ""){
+        if (json_str != "") {
             try {
                 //Create the JSON object from the returned text from the server.
                 JSONObject obj = new JSONObject(json_str);
@@ -180,7 +225,7 @@ public class Sign_up extends AppCompatActivity {
                     Integer standing_int = result_obj.getInt("good_standing");
                     Boolean standing = false;
 
-                    if(standing_int == 1) {
+                    if (standing_int == 1) {
                         standing = true;
                     }
 
@@ -188,15 +233,16 @@ public class Sign_up extends AppCompatActivity {
                     User user = new User(fName, lName, uName, plate, state, make1, model1, year1, color1, email, standing, password);
                     user.print();
                     return user;
-                }
-                else {//if the request for a salt was not successful
+                } else {//if the request for a salt was not successful
                     String message = obj.getString("message");
                     System.out.println(message);
 
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+            return null;
+        }
         return null;
     }
 
@@ -209,7 +255,7 @@ public class Sign_up extends AppCompatActivity {
      * @param param Request parameter, request parameter should be name1=value1&name2=value2
      */
 
-    public void sendpost(String url, String param) {
+    public String sendpost(String url, String param) {
         PrintWriter out = null;
         BufferedReader in = null;
         String result = "";
