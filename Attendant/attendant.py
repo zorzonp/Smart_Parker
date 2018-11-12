@@ -21,6 +21,7 @@ import base64
 import json
 from urllib import request
 from urllib import parse
+from urllib import error
 
 # DATABASE COLUMNS
 # occupancy - TABLE times (number, state, timeIn, timeOut)
@@ -30,7 +31,7 @@ from urllib import parse
 REQ_TIMEOUT = 10 # Timeout for requests.
 TOP_LEVEL_PATH = './'
 TIME_DILATION = 200 # Dilate time by a factor of 200 for testting
-ALPR_KEY = '../ALPR_Key.txt' # Location of ALPR key
+ALPR_KEY = '../../ALPR_Key.txt' # Location of ALPR key
 MIN_CONF = 70 # Minimum confidence for ALPR result.
 
 # camera_manager()
@@ -284,7 +285,11 @@ def read_plate(fileName, key):
         return plate
     # Issue request to OpenALPR API
     url = 'https://api.openalpr.com/v2/recognize_bytes?country=us&secret_key=%s&topn=1' % key
-    r = request.urlopen(url,data=img_64)
+    try:
+        r = request.urlopen(url,data=img_64)
+    except error.HTTPError as e:
+        print('HTTP Error: %s' % e.reason)
+        return plate    
     obj = json.loads(r.read()) # Load response into a JSON object.
     if(obj['error'] == False): # Ensure there is no error before proceeding.
         if(len(obj['results']) > 0): # If result was obtained,
@@ -312,47 +317,48 @@ if __name__ == '__main__':
 ###################
     params = [[0,'in','camera0'],[1,'out','camera1']]
     openalpr_key = load_alpr_key()
-    t = []
-    mQ = []
-    q = queue.Queue()
-    for i,param in enumerate(params):
-        mQ.append(queue.Queue())
-        t.append(threading.Thread(target = camera_manager, args = tuple(param) + (q,mQ[i])))
-    for worker in t:
-        worker.setDaemon(True)
-        worker.start()
+    if(len(openalpr_key) > 0):
+        t = []
+        mQ = []
+        q = queue.Queue()
+        for i,param in enumerate(params):
+            mQ.append(queue.Queue())
+            t.append(threading.Thread(target = camera_manager, args = tuple(param) + (q,mQ[i])))
+        for worker in t:
+            worker.setDaemon(True)
+            worker.start()
 
-    while True:
-        try:
-            req = q.get()
-            #try:
-            result = read_plate(req['image'],openalpr_key)
-            if(result['number'] != ''): # If the result is good, extract the state and number.
-                state = result['state']
-                number = result['number']
-            #except TimeoutErr:
-                if(req['direction'] == 'in'):
-                    r = check_plate(number,state)
-                    mQ[req['ID']].put({'result':result,'ID':req['ID']})
-                    if(r == 0):
-                        r = log_entry(number,state,req['timestamp'])
+        while True:
+            try:
+                req = q.get()
+                #try:
+                result = read_plate(req['image'],openalpr_key)
+                if(result['number'] != ''): # If the result is good, extract the state and number.
+                    state = result['state']
+                    number = result['number']
+                #except TimeoutErr:
+                    if(req['direction'] == 'in'):
+                        r = check_plate(number,state)
+                        mQ[req['ID']].put({'result':result,'ID':req['ID']})
                         if(r == 0):
-                            open_gate(req['ID'])
-                elif(req['direction'] == 'out'):
-                    timeIn = get_entry(number, state)
+                            r = log_entry(number,state,req['timestamp'])
+                            if(r == 0):
+                                open_gate(req['ID'])
+                    elif(req['direction'] == 'out'):
+                        timeIn = get_entry(number, state)
+                        mQ[req['ID']].put({'result':result,'ID':req['ID']})
+                        if(timeIn >= 0): # If valid timestamp,
+                            r = log_exit(number,state,req['timestamp']) # Log the exit time.
+                            if(r >= 0):
+                                p = calc_price(timeIn,req['timestamp']) # Calculate the price.
+                                if(p > 0):
+                                    send_invoice(number,state, p)
+                                open_gate(req['ID'])
+                else:
                     mQ[req['ID']].put({'result':result,'ID':req['ID']})
-                    if(timeIn >= 0): # If valid timestamp,
-                        r = log_exit(number,state,req['timestamp']) # Log the exit time.
-                        if(r >= 0):
-                            p = calc_price(timeIn,req['timestamp']) # Calculate the price.
-                            if(p > 0):
-                                send_invoice(number,state, p)
-                            open_gate(req['ID'])
-            else:
-                mQ[req['ID']].put({'result':result,'ID':req['ID']})
-        except KeyboardInterrupt:
-            print('Exiting...')
-            break
+            except KeyboardInterrupt:
+                print('Exiting...')
+                break
 
 #   params = read in parameters from ini file.
 #   t = []

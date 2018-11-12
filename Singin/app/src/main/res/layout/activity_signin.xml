@@ -7,6 +7,33 @@
     android:baselineAligned="false"
     android:weightSum="1">
 
+<<<<<<< HEAD
+    <!--<TextView-->
+    <!--android:id="@+id/title"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:layout_weight="0.23"-->
+    <!--android:text="       Smart_parker"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="40sp" />-->
+||||||| merged common ancestors
+    <TextView
+        android:id="@+id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.23"
+        android:text="       Smart_parker"
+        android:textColor="#000000"
+        android:textSize="40sp" />
+=======
     <!--<TextView-->
         <!--android:id="@+id/title"-->
         <!--app:layout_constraintLeft_toLeftOf="parent"-->
@@ -19,6 +46,7 @@
         <!--android:text="       Smart_parker"-->
         <!--android:textColor="#000000"-->
         <!--android:textSize="40sp" />-->
+>>>>>>> Java_Integ
 
     <TableRow>
         <TextView />
@@ -30,9 +58,16 @@
             android:textSize="48px" />
 
         <EditText
+<<<<<<< HEAD
+            android:id="@+id/username_signup_field"
+||||||| merged common ancestors
+            android:id="@+id/account"
+=======
             android:id="@+id/username_text_field"
+>>>>>>> Java_Integ
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:minWidth="440px"
             android:textSize="48px" />
         <TextView />
@@ -44,16 +79,28 @@
         <TextView />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/fname_signup"
             android:textSize="48px" />
 
         <EditText
+<<<<<<< HEAD
+            android:id="@+id/firstname_signup_field"
+||||||| merged common ancestors
+            android:id="@+id/pwd"
+=======
             android:id="@+id/first_name_text_field"
+>>>>>>> Java_Integ
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:inputType="text"
+||||||| merged common ancestors
+            android:inputType="textPassword"
+=======
+>>>>>>> Java_Integ
             android:minWidth="440px"
             android:textSize="48px" />
 
@@ -64,16 +111,28 @@
         <TextView />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/laname_signup"
             android:textSize="48px" />
 
         <EditText
+<<<<<<< HEAD
+            android:id="@+id/lastname_signup_field"
+||||||| merged common ancestors
+            android:id="@+id/pwd"
+=======
             android:id="@+id/last_name_text_field"
+>>>>>>> Java_Integ
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:inputType="text"
+||||||| merged common ancestors
+            android:inputType="textPassword"
+=======
+>>>>>>> Java_Integ
             android:minWidth="440px"
             android:textSize="48px" />
 
@@ -84,13 +143,76 @@
         <TextView />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/password_signup"
             android:textSize="48px" />
 
         <EditText
+<<<<<<< HEAD
+            android:id="@+id/password_signup_field"
+||||||| merged common ancestors
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salt："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="licence_num："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="licence_state："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+=======
             android:id="@+id/pwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,9 +254,26 @@
 
         <EditText
             android:id="@+id/pwd"
+>>>>>>> Java_Integ
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:minWidth="440px"
+<<<<<<< HEAD
+||||||| merged common ancestors
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="make："
+=======
             android:textSize="48px"
             android:inputType="textPassword"/>
         <TextView />
@@ -148,6 +287,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/make"
+>>>>>>> Java_Integ
+            android:textSize="48px" />
+        <TextView />
+    </TableRow>
+
+<<<<<<< HEAD
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/btn_button1"
+        android:onClick="Goto_secondpage"/>
+||||||| merged common ancestors
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="module："
             android:textSize="48px" />
 
         <EditText
@@ -160,6 +319,80 @@
         <TextView />
     </TableRow>
 
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="year："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="color："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px"
+            android:inputType="textPassword"/>
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="venmo_uname："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px" />
+        <TextView />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20px">
+
+        <TextView />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="                Sign in"
+            android:textColor="#444444"
+            android:textSize="48px" />
+    </TableRow>
+
+=======
     <TableRow android:layout_marginTop="20px">
         <TextView />
 
@@ -255,5 +488,6 @@
             android:textSize="48px" />
     </TableRow>
 
+>>>>>>> Java_Integ
 
 </TableLayout>
