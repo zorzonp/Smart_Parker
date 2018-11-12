@@ -1,0 +1,107 @@
+nav{
+    position: fixed !important;
+    display: inline-block;
+    width: 100%;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: black;
+    background-color: gray;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.first{
+    margin-top: 20px;
+}
+
+.title{
+    text-align: center;
+    font-size: 60px;
+}
+.subtitle{
+    text-align: center;
+}
+.subsubtitle{
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.title_image{
+    padding-top: 100px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bu_color{
+    background-color: #CC0001;
+}
+
+.gray_text{
+    color: black;
+}
+
+.title_block{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.subsection{
+    font-size: 40px;
+}
+
+.fixnav{
+    border: 0px;
+}
+
+.navbar-nav{
+    background-color: #CC0001;
+}
+
+.button{
+    background-color: #CC0001;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+}
+
+.red_section{
+   background-color: #CC0001;
+   padding-bottom: 20px;
+   padding-top: 20px; 
+}
+
+.white_section{
+   background-color: white;
+   padding-bottom: 20px;
+   padding-top: 20px; 
+}
+
+#parent{
+    width: 100%;
+}
+.aligned_div{
+    padding: 0px;
+    display: inline-block;
+    width: 25%;
+}
+.aligned_div_two{
+    padding: 0px;
+    display: inline-block;
+    width: 33%;
+}
+
+.question{
+    font-size: 20px;
+}
