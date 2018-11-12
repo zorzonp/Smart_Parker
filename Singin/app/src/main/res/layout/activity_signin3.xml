@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:stretchColumns="0,3"
+    android:baselineAligned="false"
+    android:weightSum="1">
+
+    <TableRow android:layout_marginTop="20px">
+        <TextView />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="venmo_uname："
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="440px"
+            android:textSize="48px" />
+        <TextView />
+    </TableRow>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@android:style/ButtonBar">
+
+        <Button android:id="@+id/btn_button3_1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Back"/>
+
+        <Button android:id="@+id/btn_button3_2"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+
+</TableLayout>
