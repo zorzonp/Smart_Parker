@@ -26,8 +26,8 @@
                 if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['salt'])){
 
                         $uname = $_POST['username'];
-                        $pword = $_POST['password'];
-                        $salt = $_POST['salt'];
+                        $pword = utf8_decode($_POST['password']);
+                        $salt = utf8_decode($_POST['salt']);
 
                         $query = "INSERT INTO owners (username, password, salt) VALUES(:username, :password, :salt)";
 
