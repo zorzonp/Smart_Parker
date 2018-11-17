@@ -6,6 +6,7 @@
 # management in the smart parker system.
 
 import hashlib
+import getpass
 import os
 import base64
 
@@ -67,4 +68,23 @@ def read_cred(data):
         except OSError:
             print('ERROR - Could not open credential file.')
             return -1
- 
+    else:
+        print('ERROR - No credential file found.')
+        return -1
+
+def load_cred():
+    data = {'username':'','salt':'','password':''}
+    # Read credential file.
+    newData = read_cred(data)
+    if(newData != -1):
+        while True:
+            data['password'] = getpass.getpass('Enter password: ')
+            if(getpass.getpass('Re-enter password: ') != data['password']):
+                print('ERROR - Passwords do not match.')
+            else:
+                break
+        data['password'] = generate_hash(data['salt'],data['password'])
+        return data
+    else:
+        print("ERROR - Could not load credentials!  Run 'Register_Operator.py' to generate new credentials.")
+        return data
