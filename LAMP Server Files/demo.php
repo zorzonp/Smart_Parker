@@ -213,6 +213,15 @@
                                 <input type="text" name="password" placeholder="Password"></input><br/>
                                 <input type="submit" name="submit" id="submit" value="Submit">
                         </form>
+
+                        <h3>TEST Update Owner</h3>
+                        <form action="update_owner_info.php" method="post" id="form">
+                                <input type="text" name="username" placeholder="Username"></input><br/>
+                                <input type="text" name="password" placeholder="Password"></input><br/>
+                                <input type="text" name="newPassword" placeholder="new Password"></input><br/>
+                                <input type="text" name="newSalt" placeholder="newSalt"></input><br/>
+                                <input type="submit" name="submit" id="submit" value="Submit">
+                        </form>
                 </div>
         </body>
 </html>
