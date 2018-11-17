@@ -19,6 +19,7 @@ import time
 import sqlite3
 import base64
 import json
+import sp_cred
 from urllib import request
 from urllib import parse
 from urllib import error
@@ -161,12 +162,12 @@ def log_entry(plateString, plateState, timestamp):
 # Purpose:  This function queries the remote database for the
 #           given plate to ensure that the person is a registered
 #           user.
-def check_plate(plateString, plateState):
+def check_plate(userData,plateString,plateState):
 #### TEMPORARY ####
     print("Checking plate: State: %s Number :%s" % (plateState, plateString)) 
     result = -1
-    params = {'username':'CMcPhers',
-        'password':'1234',
+    params = {'username':userData['username'],
+        'password':userData['password'],
         'license_plate':plateString,
         'state':plateState}
     payload = parse.urlencode(params).encode('ascii') # Encode payload in urlencoded format. 
@@ -223,10 +224,10 @@ def calc_price(inTime, outTime):
 # Purpose:  This function queries the remote database for the
 #           PayPal account name associated with the plate, and
 #           submit an invoice.
-def send_invoice(plateString,plateState,price):
+def send_invoice(userData,plateString,plateState,price):
     acct = ''
-    params = {'username':'CMcPhers',
-        'password':'1234',
+    params = {'username':userData['username'],
+        'password':userData['password'],
         'license_plate':plateString,
         'state':plateState}
     payload = parse.urlencode(params).encode('ascii') # Encode in urlencoded format.
@@ -317,7 +318,8 @@ if __name__ == '__main__':
 ###################
     params = [[0,'in','camera0'],[1,'out','camera1']]
     openalpr_key = load_alpr_key()
-    if(len(openalpr_key) > 0):
+    user_cred = sp_cred.load_cred()
+    if(len(openalpr_key) > 0 and len(user_cred['username']) > 0):
         t = []
         mQ = []
         q = queue.Queue()
@@ -338,7 +340,7 @@ if __name__ == '__main__':
                     number = result['number']
                 #except TimeoutErr:
                     if(req['direction'] == 'in'):
-                        r = check_plate(number,state)
+                        r = check_plate(user_cred,number,state)
                         mQ[req['ID']].put({'result':result,'ID':req['ID']})
                         if(r == 0):
                             r = log_entry(number,state,req['timestamp'])
@@ -352,37 +354,10 @@ if __name__ == '__main__':
                             if(r >= 0):
                                 p = calc_price(timeIn,req['timestamp']) # Calculate the price.
                                 if(p > 0):
-                                    send_invoice(number,state, p)
+                                    send_invoice(user_cred,number,state, p)
                                 open_gate(req['ID'])
                 else:
                     mQ[req['ID']].put({'result':result,'ID':req['ID']})
             except KeyboardInterrupt:
                 print('Exiting...')
                 break
-
-#   params = read in parameters from ini file.
-#   t = []
-#   mQ = []
-#   q = create queue for ALPR requests
-#   for i,param in enumerate(params):
-#       mQ.append(new queue for passing messages to thread)
-#       t.append(new thread(args = (param,q,mQ[i])))
-#   for thread in t:
-#       t.start()
-#
-#   while True:
-#       req = q.get()
-#       try:
-#           result = get identification info(req['image'],timeout)
-#       except: TimeoutErr
-#       if(req['direction'] = 'in'):
-#           r = check_plate(result)
-#           if(not r):
-#               log_entry(result,req['timestamp'])
-#               open_gate(req['ID'])
-#       elif(req['direction'] = 'out'):
-#           r = get_entry(result)
-#           if(not r):
-#               p = calc_price(r,req['timestamp'])
-#               send_invoice(result,p)
-#               open_gate(req['ID'])
