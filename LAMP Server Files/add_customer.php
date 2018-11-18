@@ -51,11 +51,11 @@
                         if ($value == true){
                                 $response["status"] = 1;
                                 $response["message"] = "Success";
-                                echo "Success, again";
+                                
                         }else{
                                 $response["status"] = 0;
                                 $response["message"] = "Falure to insert";
-                                echo "Opps!";
+                                
                         }
                 }else{
                         $response["status"] = 0;

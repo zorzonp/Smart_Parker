@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    tools:context=".Sign_up"
     android:gravity="center_vertical"
     android:stretchColumns="0,3"
     android:baselineAligned="false"
     android:weightSum="1">
 
-    <!--<TextView-->
-    <!--android:id="@+id/title"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--app:layout_constraintRight_toRightOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginTop="20dp"-->
-    <!--android:layout_weight="0.23"-->
-    <!--android:text="       Smart_parker"-->
-    <!--android:textColor="#000000"-->
-    <!--android:textSize="40sp" />-->
+
 
     <TableRow>
         <TextView />
@@ -26,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="username："
+            android:text="@string/uname_login"
             android:textSize="48px" />
 
         <EditText
@@ -43,11 +35,12 @@
         android:baselineAligned="false"
         android:orientation="vertical">
         <TextView />
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="first_name："
+            android:text="@string/fname_signup"
             android:textSize="48px" />
 
         <EditText
@@ -63,11 +56,12 @@
 
     <TableRow android:layout_marginTop="20px">
         <TextView />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="last_name："
+            android:text="@string/laname_signup"
             android:textSize="48px" />
 
         <EditText
@@ -83,28 +77,29 @@
 
     <TableRow android:layout_marginTop="20px">
         <TextView />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="password："
+            android:text="@string/password_signup"
             android:textSize="48px" />
 
         <EditText
             android:id="@+id/password_signup_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="text|textPassword"
             android:minWidth="440px"
             android:textSize="48px" />
         <TextView />
     </TableRow>
 
     <Button
+        android:id="@+id/btn_button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/btn_button1"
-        android:onClick="Goto_secondpage"/>
+        android:onClick="Goto_secondpage"
+        android:text="Next" />
 
 </TableLayout>

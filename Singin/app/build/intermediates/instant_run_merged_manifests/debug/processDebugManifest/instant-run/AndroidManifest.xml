@@ -27,12 +27,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.xcliang.singin.Sign_up" />
+        <activity android:name="com.example.xcliang.singin.Sign_up" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        >
+        <activity android:name="com.example.xcliang.singin.Sign_up2" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        >
         <activity android:name="com.example.xcliang.singin.DisplayUser" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.xcliang.singin.SignUp2" />
+        <activity android:name="com.example.xcliang.singin.SignUp3" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

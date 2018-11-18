@@ -20,6 +20,21 @@ public class User implements Parcelable {
     String password_hash;
 
 
+    User(){
+        this.firstName = "";
+        this.lastName = "";
+        this.username = "";
+        this.license_plate = "";
+        this.license_state = "";
+        this.make = "";
+        this.model = "";
+        this.year = "";
+        this.color = "";
+        this.email = "";
+        this.good_standing = "";
+        this.password_hash = "";
+    }
+
     //This is a constructor for the class. It creates an instance of the class with provided data
     User(String firstName, String lastName, String username, String license_plate,
          String license_state, String make, String model, Integer year, String color, String email,
@@ -109,8 +124,51 @@ public class User implements Parcelable {
         dest.writeString(password_hash);
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
+    public void setGood_standing(String good_standing) {
+        this.good_standing = good_standing;
+    }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
+    public void setLicense_plate(String license_plate) {
+        this.license_plate = license_plate;
+    }
+
+    public void setLicense_state(String license_state) {
+        this.license_state = license_state;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setPassword_hash(String password_hash) {
+        this.password_hash = password_hash;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 }

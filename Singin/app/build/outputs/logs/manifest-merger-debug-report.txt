@@ -1,172 +1,172 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6deaa0d10a1ad0b6a1c3835db2070bb7/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/861c2dbfa8cbdde0e3c1f5be5eaab640/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/9f5d8bef494591bd337743002c4710cd/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/b0dcc3a76df38b7410f0424809d1018d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c2ac2a104566d30077b2cb4985dc7f90/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/63605298ed7138041d355f29b0762e50/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/700634da5522eeed1b66799b3d5f4d78/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1665e952be1a1ccff9e00785dc2bfe72/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/b841461f3352037c7d015bc0d6bae821/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/a1d8206adb915bd053470c4c4460ddc2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/df9b486fcbcfc7af62bd4e7e0c766192/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/51efd56da404e06283f8a4e4a85ca3af/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/309ecfabe7f321e13fa99cd84cb891b9/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/cda4df5d29f87f1adb72cb5c11dddc9d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/4212a54ebc334531ff0fe9f2fc3c66b4/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/1cd0cf8e29ccb5b5bf91097b4319cd58/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/5cc7b3055a1f5f302c57f566f5d996b1/AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/7d31012a0becfa41a9dddeefebdf17e8/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f6c5c9b6d4dc9aeb2e24003acea6123c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf8e79bb1f9ad16240aa4189da1d1ecb/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/1438c323e7331f34f4e12feb4db2111e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/c99a35393ee4e9acb4789bb40ffbcc32/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/06b43d1e4d962d2473273b828111fa01/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/6a77b719c8cdda2c565f26c75ef70d02/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/7f7d73853983d30d2d92ba1d84102497/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c12f4a47744dcd520e711d752fbbdb98/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/c6ec1e84dbd8d5fbd36e9aa1439a9390/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/baf501e20f110fbb11a288b1224b09e9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/05a63a7c9c8dc3ba0f3927e433d10f33/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/3f0558b1b4203b675a430abb8c8bacf8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/b33456a2e6aaae07d89ae5b73449a918/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/e9b0de6a5e995502a68be7b69662dcca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/6b0dcc364aa01224b8d903f80d539777/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/e774badd16d0c9a8370b8d7db27cdcb7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/30e704926bec258a055085dd16b44813/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/6706ba2ffc1d8b46d6915354d32de09e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/0e082ecb30d624788aa394e668893ea5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/1e53b6dc349277b23e9a4b1838b638a9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/c3414747ea80a050b70b5215a84bfa0d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/7fba5733278742f57e8b628c3b738df6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/b56204130f513f1fb135896d6cf8f802/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/e018928b84c789a3be5bd8e422b3a206/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/40fdb365b7b0df003ea66557df42847a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/e88242b31563090c5461167beffdbd20/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/34336de69c5c130ccaab1bebd7a7a1c9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/b184965655fc6edb981e080ca05412da/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/91792aeb122b12c17b9d6f3fccdef7d5/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/1ffc392820b33deb50e622c207ae58f3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/fe5c299de2f8a6164b06cdc52927a7f3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/21a3ef2dc7ddaa8fab66e6b44b75e996/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3aa3c2af37ebff6edd111c489744b697/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/4a5e278461cd2e74529b43656e006a05/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:3:5-41
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-32:12
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:1-35:12
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:7:5-30:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/861c2dbfa8cbdde0e3c1f5be5eaab640/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/861c2dbfa8cbdde0e3c1f5be5eaab640/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/1cd0cf8e29ccb5b5bf91097b4319cd58/AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/1cd0cf8e29ccb5b5bf91097b4319cd58/AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/5cc7b3055a1f5f302c57f566f5d996b1/AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/5cc7b3055a1f5f302c57f566f5d996b1/AndroidManifest.xml:22:5-23:19
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:7:5-33:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/e018928b84c789a3be5bd8e422b3a206/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/e018928b84c789a3be5bd8e422b3a206/AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/1cd0cf8e29ccb5b5bf91097b4319cd58/AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:13:9-40
 activity#com.example.xcliang.singin.LogInActivity
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:9-20:20
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:19-48
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:14:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:15:13-19:29
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:18:27-74
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:18:27-74
 activity#com.example.xcliang.singin.Sign_up
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:21:9-45
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:21:9-25:20
 	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:21:19-42
-activity#com.example.xcliang.singin.DisplayUser
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:24:9-29:20
-	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:24:19-46
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:21:19-42
 intent-filter#category:name:android.intent.category.DEFAULT
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:25:13-28:29
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:22:13-24:29
 category#android.intent.category.DEFAULT
-ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:27:17-75
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:23:17-76
 	android:name
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:27:27-73
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:23:27-73
+activity#com.example.xcliang.singin.DisplayUser
+ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:27:9-31:20
+	android:name
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml:27:19-46
 uses-sdk
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6deaa0d10a1ad0b6a1c3835db2070bb7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6deaa0d10a1ad0b6a1c3835db2070bb7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/861c2dbfa8cbdde0e3c1f5be5eaab640/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/861c2dbfa8cbdde0e3c1f5be5eaab640/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-fragment:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/9f5d8bef494591bd337743002c4710cd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/9f5d8bef494591bd337743002c4710cd/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/b0dcc3a76df38b7410f0424809d1018d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/b0dcc3a76df38b7410f0424809d1018d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c2ac2a104566d30077b2cb4985dc7f90/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c2ac2a104566d30077b2cb4985dc7f90/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/63605298ed7138041d355f29b0762e50/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/63605298ed7138041d355f29b0762e50/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/700634da5522eeed1b66799b3d5f4d78/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/700634da5522eeed1b66799b3d5f4d78/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1665e952be1a1ccff9e00785dc2bfe72/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1665e952be1a1ccff9e00785dc2bfe72/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/b841461f3352037c7d015bc0d6bae821/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/b841461f3352037c7d015bc0d6bae821/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/a1d8206adb915bd053470c4c4460ddc2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/a1d8206adb915bd053470c4c4460ddc2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/df9b486fcbcfc7af62bd4e7e0c766192/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/df9b486fcbcfc7af62bd4e7e0c766192/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/51efd56da404e06283f8a4e4a85ca3af/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/51efd56da404e06283f8a4e4a85ca3af/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/309ecfabe7f321e13fa99cd84cb891b9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/309ecfabe7f321e13fa99cd84cb891b9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/cda4df5d29f87f1adb72cb5c11dddc9d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/cda4df5d29f87f1adb72cb5c11dddc9d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/4212a54ebc334531ff0fe9f2fc3c66b4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/4212a54ebc334531ff0fe9f2fc3c66b4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/1cd0cf8e29ccb5b5bf91097b4319cd58/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/1cd0cf8e29ccb5b5bf91097b4319cd58/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/5cc7b3055a1f5f302c57f566f5d996b1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/5cc7b3055a1f5f302c57f566f5d996b1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/7d31012a0becfa41a9dddeefebdf17e8/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/7d31012a0becfa41a9dddeefebdf17e8/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f6c5c9b6d4dc9aeb2e24003acea6123c/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f6c5c9b6d4dc9aeb2e24003acea6123c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf8e79bb1f9ad16240aa4189da1d1ecb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf8e79bb1f9ad16240aa4189da1d1ecb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/1438c323e7331f34f4e12feb4db2111e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/1438c323e7331f34f4e12feb4db2111e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/c99a35393ee4e9acb4789bb40ffbcc32/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/c99a35393ee4e9acb4789bb40ffbcc32/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/06b43d1e4d962d2473273b828111fa01/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/06b43d1e4d962d2473273b828111fa01/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/6a77b719c8cdda2c565f26c75ef70d02/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/6a77b719c8cdda2c565f26c75ef70d02/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/7f7d73853983d30d2d92ba1d84102497/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/7f7d73853983d30d2d92ba1d84102497/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c12f4a47744dcd520e711d752fbbdb98/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c12f4a47744dcd520e711d752fbbdb98/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/c6ec1e84dbd8d5fbd36e9aa1439a9390/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /Users/xcliang/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/c6ec1e84dbd8d5fbd36e9aa1439a9390/AndroidManifest.xml:20:5-44
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/baf501e20f110fbb11a288b1224b09e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/baf501e20f110fbb11a288b1224b09e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/670fcefece0f2235001d6aed70890c59/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/05a63a7c9c8dc3ba0f3927e433d10f33/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/05a63a7c9c8dc3ba0f3927e433d10f33/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/3f0558b1b4203b675a430abb8c8bacf8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/3f0558b1b4203b675a430abb8c8bacf8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/b33456a2e6aaae07d89ae5b73449a918/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/b33456a2e6aaae07d89ae5b73449a918/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/e9b0de6a5e995502a68be7b69662dcca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/e9b0de6a5e995502a68be7b69662dcca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/6b0dcc364aa01224b8d903f80d539777/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/6b0dcc364aa01224b8d903f80d539777/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/e774badd16d0c9a8370b8d7db27cdcb7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/e774badd16d0c9a8370b8d7db27cdcb7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/30e704926bec258a055085dd16b44813/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/30e704926bec258a055085dd16b44813/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/6706ba2ffc1d8b46d6915354d32de09e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/6706ba2ffc1d8b46d6915354d32de09e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/0e082ecb30d624788aa394e668893ea5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/0e082ecb30d624788aa394e668893ea5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/1e53b6dc349277b23e9a4b1838b638a9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/1e53b6dc349277b23e9a4b1838b638a9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/c3414747ea80a050b70b5215a84bfa0d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/c3414747ea80a050b70b5215a84bfa0d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/7fba5733278742f57e8b628c3b738df6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/7fba5733278742f57e8b628c3b738df6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/b56204130f513f1fb135896d6cf8f802/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/b56204130f513f1fb135896d6cf8f802/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/b43183995d3d9a7ddd45976f422c6e93/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/e018928b84c789a3be5bd8e422b3a206/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/e018928b84c789a3be5bd8e422b3a206/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/40fdb365b7b0df003ea66557df42847a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/40fdb365b7b0df003ea66557df42847a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/e88242b31563090c5461167beffdbd20/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/e88242b31563090c5461167beffdbd20/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/34336de69c5c130ccaab1bebd7a7a1c9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/34336de69c5c130ccaab1bebd7a7a1c9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/b184965655fc6edb981e080ca05412da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/b184965655fc6edb981e080ca05412da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/91792aeb122b12c17b9d6f3fccdef7d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/91792aeb122b12c17b9d6f3fccdef7d5/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/1ffc392820b33deb50e622c207ae58f3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/1ffc392820b33deb50e622c207ae58f3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/fe5c299de2f8a6164b06cdc52927a7f3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/fe5c299de2f8a6164b06cdc52927a7f3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/21a3ef2dc7ddaa8fab66e6b44b75e996/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/21a3ef2dc7ddaa8fab66e6b44b75e996/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3aa3c2af37ebff6edd111c489744b697/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3aa3c2af37ebff6edd111c489744b697/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/4a5e278461cd2e74529b43656e006a05/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/peterzorzonello/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/4a5e278461cd2e74529b43656e006a05/AndroidManifest.xml:20:5-44
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		ADDED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		ADDED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/src/main/AndroidManifest.xml
