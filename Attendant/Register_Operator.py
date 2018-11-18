@@ -19,10 +19,9 @@
 import getpass
 import os
 import json
+import requests
+from requests.exceptions import RequestException
 import sp_cred
-from urllib import request
-from urllib import parse
-from urllib import error
 
                    
 def CreateCredentials():
@@ -44,13 +43,10 @@ def CreateCredentials():
         
         # Attempt to register online.
         url = 'https://smartparker.cf/add_owner.php'
-        payload = parse.urlencode(data).encode()
-        req = request.Request(url,data=payload)
-        print('URL = %s, payload = %s' % (url,payload))
         try:
             # Send POST
-            resp = request.urlopen(req)
-            obj = json.loads(resp.read())
+            r = requests.post(url,data=data)
+            obj = r.json()
             if(obj['status'] == 0):
                 print('SERVER ERROR - %s' % obj['message'])
             else:
@@ -88,12 +84,9 @@ def UpdateCredentials():
 
         # Attept to update credentials.
         url = 'https://smartparker.cf/update_owner_info.php'
-        payload = parse.urlencode(data).encode()
-        req = request.Request(url,data=payload)
-        print('URL = %s, payload = %s' % (url,payload))
         try:
-            resp = request.urlopen(req)
-            obj = json.loads(resp.read())
+            r = requests.post(url,data=data)
+            obj = r.json()
             if(obj['status'] == 0):
                 print('SERVER ERROR - %s' % obj['message'])
             else:
@@ -114,11 +107,9 @@ def RecoverCredentials(data):
     
         # Attempt to obtain salt from server.
         url = 'https://smartparker.cf/get_salt.php'
-        payload = parse.urlencode(rData).encode()
-        req = request.Request(url,data=payload)
         try:
-            resp = request.urlopen(req)
-            obj = json.loads(resp.read())
+            r = requests.post(url,data=rData)
+            obj = r.json()
             if(obj['status'] == 0):
                 print('SERVER ERROR - %s' % obj['message'])
                 return -1

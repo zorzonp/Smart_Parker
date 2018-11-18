@@ -20,9 +20,8 @@ import sqlite3
 import base64
 import json
 import sp_cred
-from urllib import request
-from urllib import parse
-from urllib import error
+import requests
+from requests.exceptions import RequestException
 
 # DATABASE COLUMNS
 # occupancy - TABLE times (number, state, timeIn, timeOut)
@@ -169,33 +168,21 @@ def check_plate(userData,plateString,plateState):
     params = {'username':userData['username'],
         'password':userData['password'],
         'license_plate':plateString,
-        'state':plateState}
-    payload = parse.urlencode(params).encode('ascii') # Encode payload in urlencoded format. 
+        'state':plateState}    
+    ### NEW ###
     url = 'https://smartparker.cf/lookup_license.php'
-    resp = request.urlopen(url,data=payload)
-    obj = json.loads(resp.read()) # Get output into dictionary object.
+    try:
+        r = requests.post(url,data=params)
+    except RequestError as e:
+        print(e)
+        return result
+    obj = r.json()
+    ### END ###
     if(obj['status'] == 0):
         print('Error from remote DB: %s' % obj['message'])
     else:
         result = 0
     return result
-    #conn = sqlite3.connect('registered.db')
-    #c = conn.cursor()
-    # Query for matching user in database.
-    #c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
-    #entries = c.fetchall()
-    #if(len(entries) == 1):
-    #    result = 0
-    #elif(len(entries) == 0):
-    #    print("User not registered.")
-    #else:
-    #    print("Error: Duplicate entry")
-    #conn.close()
-    #return result
-#   result = Query from remote database (plateString)
-#   if(result == Not Found):
-#       return -1
-#   return 0
 
 # calc_price()
 # Purpose:  Calculate the price to charge the customer based
@@ -230,10 +217,15 @@ def send_invoice(userData,plateString,plateState,price):
         'password':userData['password'],
         'license_plate':plateString,
         'state':plateState}
-    payload = parse.urlencode(params).encode('ascii') # Encode in urlencoded format.
+    ### NEW ###
     url = 'https://smartparker.cf/lookup_license.php'
-    resp = request.urlopen(url,data=payload) # Query the database.
-    obj = json.loads(resp.read()) # Load response into dictionary object.
+    try:
+        resp = requests.post(url,data=params)
+    except RequestException as e:
+        print(e)
+        return -1
+    obj = resp.json()
+    ### END NEW ###
     if(obj['status'] == 0):
         print('Error in remote DB: %s' % obj['message'])
         return -1
@@ -241,23 +233,6 @@ def send_invoice(userData,plateString,plateState,price):
         acct = obj['result']['email']
         print('Sending invoice for %0.2f to account %s' % (price,acct))
         return 0
-    #conn = sqlite3.connect('registered.db')
-    #c = conn.cursor()
-
-    # Query database for PayPal account name.
-    #c.execute("SELECT * FROM users WHERE number=? AND state=?",(plateString,plateState))
-    #entries = c.fetchall()
-    #conn.close() # Close SQL connection.
-    #if(len(entries) == 0):
-    #    print("Error, no match")
-    #    return -1
-    #elif(len(entries) > 1):
-    #    print("Error: duplicate entries")
-    #    return -1
-    #else:
-    #    acct = entries[0][2]
-    #    print('Sending invoice for %0.2f to account %s' % (price,acct))
-    #    return 0
 
 # open_gate()
 # Purpose:  This function opens the gate.  Probably won't do
@@ -287,11 +262,11 @@ def read_plate(fileName, key):
     # Issue request to OpenALPR API
     url = 'https://api.openalpr.com/v2/recognize_bytes?country=us&secret_key=%s&topn=1' % key
     try:
-        r = request.urlopen(url,data=img_64)
-    except error.HTTPError as e:
-        print('HTTP Error: %s' % e.reason)
-        return plate    
-    obj = json.loads(r.read()) # Load response into a JSON object.
+        r = requests.post(url,data=img_64)
+    except RequestError as e:
+        print(e)
+        return plate
+    obj = r.json() # Decode JSON object
     if(obj['error'] == False): # Ensure there is no error before proceeding.
         if(len(obj['results']) > 0): # If result was obtained,
             conf = obj['results'][0]['confidence'] # Ensure confidence is higher than minimum.
