@@ -124,4 +124,11 @@
         android:onClick="Goto_secondpage"
         android:text="Next" />
 
+    <Button
+        android:id="@+id/btn_button_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Goto_Loginpage"
+        android:text="Log In" />
+
 </TableLayout>
