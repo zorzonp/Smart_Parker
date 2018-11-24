@@ -1,7 +1,13 @@
 #Internal package file, do not edit.
+<<<<<<< HEAD
 #Fri Nov 23 23:19:44 EST 2018
 0.baseType=DIRECTORY
 0.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/0
+=======
+#Sun Nov 18 16:37:01 EST 2018
+0.baseType=DIRECTORY
+0.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/0
+>>>>>>> 035d36c13003fb2a75dd7d83ee13736f9fd127a5
 0.path=classes.dex
 0.set=DEX
 count=1

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Fri Nov 23 23:19:44 EST 2018
 base.0=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/0
+=======
+#Sun Nov 18 16:37:01 EST 2018
+base.0=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/0
+>>>>>>> 035d36c13003fb2a75dd7d83ee13736f9fd127a5
 path.0=classes.dex
 renamed.0=classes.dex
