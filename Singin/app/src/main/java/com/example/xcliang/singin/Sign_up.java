@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +13,12 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.concurrent.ExecutionException;
 
+import android.app.Activity;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -41,6 +48,9 @@ public class Sign_up extends AppCompatActivity {
     //create an instance of the helper so we can access the functions
     private ServerHelper helper = new ServerHelper();
 
+    private Spinner spinner;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +67,7 @@ public class Sign_up extends AppCompatActivity {
 
 
         Button btn1=(Button)findViewById(R.id.btn_button1);
+        Button button_to_login=(Button)findViewById(R.id.btn_button_to_login);
 
         //goes to the second sign up page
         btn1.setOnClickListener(new View.OnClickListener(){
@@ -71,6 +82,39 @@ public class Sign_up extends AppCompatActivity {
             }
         });
 
+        button_to_login.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                goto_login();
+            }
+        });
+
+
+        //set up the list for selecting state
+        spinner = (Spinner) findViewById(R.id.spinner);
+        final String[] items = { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI"
+                                , "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI"
+                                , "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC"
+                                , "ND", "OH", "OK", "OR",, "PA", "RI", "SC", "SD", "TN", "TX", "UT"
+                                , "VT", "VA", "WA", "WV", "WI", "WY", "AS", "DC", "FM", "GU", "MH"
+                                , "MP", "PW", "PR", "VI"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                                            android.R.layout.simple_spinner_item, items);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                Toast.makeText(Sign_up.this, items[arg2], 0).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
+        spinner.setAdapter(adapter);
 
 
     }
@@ -116,7 +160,7 @@ public class Sign_up extends AppCompatActivity {
         }
     }
 
-    //TODO: Add a comment describing what this is and why it is used and what it does
+    //Goto the second page of sign up, then save the user info
     private void gotoLayout2(){
         setContentView(R.layout.activity_signin2);
         Button btn2=(Button)findViewById(R.id.btn_button2_1);
@@ -173,7 +217,8 @@ public class Sign_up extends AppCompatActivity {
 
     }
 
-    //TODO: Add a comment describing what this is and why it is used and what it does
+    //Goto the first page of sign up and then save the user info
+    //Define the use of button(Goto page 2)
     private void gotoLayout1(){
         //when the user hits the very first button on the very first sign up page
         setContentView(R.layout.activity_signin);
@@ -204,7 +249,7 @@ public class Sign_up extends AppCompatActivity {
         });
     }
 
-    //TODO: Add a comment describing what this is and why it is used and what it does
+    //Goto the third page of sign up and then submit user info or get back to the previous page
     private void gotoLayout3(){
         //when the user hits the back button on the last sign up page
         setContentView(R.layout.activity_signin3);
@@ -263,6 +308,11 @@ public class Sign_up extends AppCompatActivity {
 
            }
         });
+    }
+
+    //If the user already have the accountm, click on the button to get to the log in page
+    private void goto_login(){
+        setContentView(R.layout.activity_log_in);
     }
 
 

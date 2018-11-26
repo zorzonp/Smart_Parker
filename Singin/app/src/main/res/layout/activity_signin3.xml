@@ -5,7 +5,8 @@
     android:baselineAligned="false"
     android:gravity="center_vertical"
     android:stretchColumns="0,3"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/backing">
 
     <TableRow android:layout_marginTop="20px">
 

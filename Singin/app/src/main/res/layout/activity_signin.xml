@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".Sign_up"
+    tools:context=".Sign up"
     android:gravity="center_vertical"
     android:stretchColumns="0,3"
     android:baselineAligned="false"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/backing">
 
-<<<<<<< HEAD
     <!--<TextView-->
     <!--android:id="@+id/title"-->
     <!--app:layout_constraintLeft_toLeftOf="parent"-->
@@ -29,11 +29,8 @@
         android:layout_height="wrap_content"
         android:text="         Smart Parker"
         android:textSize="100px" />
-    
-=======
 
 
->>>>>>> 035d36c13003fb2a75dd7d83ee13736f9fd127a5
     <TableRow>
         <TextView />
 
@@ -117,18 +114,26 @@
         <TextView />
     </TableRow>
 
-    <Button
-        android:id="@+id/btn_button1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:onClick="Goto_secondpage"
-        android:text="Next" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_button_to_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Goto_Loginpage"
-        android:text="Log In" />
+        <Button
+            android:id="@+id/btn_button_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Goto_Loginpage"
+            android:text="Log In" />
+
+        <Button
+            android:id="@+id/btn_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Goto_secondpage"
+            android:text="Next" />
+
+
+    </LinearLayout>
 
 </TableLayout>
