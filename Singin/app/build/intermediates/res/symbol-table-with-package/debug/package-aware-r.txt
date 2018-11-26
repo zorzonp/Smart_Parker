@@ -615,6 +615,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable backing
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -668,6 +669,7 @@ id btn_button2_1
 id btn_button2_2
 id btn_button3_1
 id btn_button3_2
+id btn_button_to_login
 id button
 id button2
 id button3
@@ -715,7 +717,6 @@ id lNameView
 id lastname_signup_field
 id left
 id licencenum_signup_field
-id licencestate_signup_field
 id line1
 id line3
 id listMode
@@ -765,6 +766,7 @@ id showCustom
 id showHome
 id showTitle
 id spacer
+id spinner
 id split_action_bar
 id spread
 id spread_inside

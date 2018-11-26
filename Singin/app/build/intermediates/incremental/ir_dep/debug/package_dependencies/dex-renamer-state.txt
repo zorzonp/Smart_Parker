@@ -1,4 +1,4 @@
-#Sun Nov 18 15:09:48 EST 2018
+#Mon Nov 26 16:35:50 EST 2018
 base.0=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/10
 path.0=classes.dex
 renamed.0=classes.dex
