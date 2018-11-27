@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
@@ -32,7 +33,7 @@ public class Sign_up extends AppCompatActivity {
     private EditText lastname_text;
     private EditText password_text;
     private EditText licencenum_text;
-    private EditText licencestate_text;
+    private Spinner licencestate_text;
     private EditText make_text;
     private EditText model_text;
     private EditText year_text;
@@ -58,6 +59,7 @@ public class Sign_up extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         signUpDriver = new User();
+
 
         username_text = (EditText)findViewById(R.id.username_signup_field);
         firstname_text = (EditText)findViewById(R.id.firstname_signup_field);
@@ -90,31 +92,7 @@ public class Sign_up extends AppCompatActivity {
         });
 
 
-        //set up the list for selecting state
-        spinner = (Spinner) findViewById(R.id.spinner);
-        final String[] items = { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI"
-                                , "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI"
-                                , "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC"
-                                , "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT"
-                                , "VT", "VA", "WA", "WV", "WI", "WY", "AS", "DC", "FM", "GU", "MH"
-                                , "MP", "PW", "PR", "VI"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                                            android.R.layout.simple_spinner_item, items);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1,
-                                       int arg2, long arg3) {
-                Toast.makeText(Sign_up.this, items[arg2], 0).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-
-            }
-        });
-        spinner.setAdapter(adapter);
 
 
     }
@@ -167,8 +145,36 @@ public class Sign_up extends AppCompatActivity {
         Button btn3=(Button)findViewById(R.id.btn_button2_2);
 
         //find the objects on the page
+
+        //set up the list for selecting state
+        spinner = (Spinner) findViewById(R.id.spinner);
+        final String[] items = { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI"
+                , "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI"
+                , "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC"
+                , "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT"
+                , "VT", "VA", "WA", "WV", "WI", "WY", "AS", "DC", "FM", "GU", "MH"
+                , "MP", "PW", "PR", "VI"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, items);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                Toast.makeText(Sign_up.this, items[arg2], 0).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
+        spinner.setAdapter(adapter);
+
         licencenum_text = (EditText)findViewById(R.id.licencenum_signup_field);
-        licencestate_text = (EditText)findViewById(R.id.spinner);
+        licencestate_text = (Spinner)findViewById(R.id.spinner);
+
         make_text = (EditText)findViewById(R.id.make_signup_field);
         model_text = (EditText)findViewById(R.id.model_signup_field);
         year_text = (EditText)findViewById(R.id.year_signup_field);
@@ -176,7 +182,7 @@ public class Sign_up extends AppCompatActivity {
 
         //set up the default values or plug in values if the back button was hit
         licencenum_text.setText(signUpDriver.license_plate);
-        licencestate_text.setText(signUpDriver.license_state);
+        licencestate_text.setSelection(Arrays.asList(items).indexOf(signUpDriver.license_state));
         make_text.setText(signUpDriver.make);
         model_text.setText(signUpDriver.model);
         year_text.setText(signUpDriver.year);
@@ -188,7 +194,7 @@ public class Sign_up extends AppCompatActivity {
             public void onClick(View v) {
                 //save the driver info
                 signUpDriver.setLicense_plate(licencenum_text.getText().toString());
-                signUpDriver.setLicense_state(licencestate_text.getText().toString());
+                signUpDriver.setLicense_state(licencestate_text.getSelectedItem().toString());
                 signUpDriver.setMake(make_text.getText().toString());
                 signUpDriver.setModel(model_text.getText().toString());
                 signUpDriver.setYear(year_text.getText().toString());
@@ -204,7 +210,7 @@ public class Sign_up extends AppCompatActivity {
 
                 //save the driver info
                 signUpDriver.setLicense_plate(licencenum_text.getText().toString());
-                signUpDriver.setLicense_state(licencestate_text.getText().toString());
+                signUpDriver.setLicense_state(licencestate_text.getSelectedItem().toString());
                 signUpDriver.setMake(make_text.getText().toString());
                 signUpDriver.setModel(model_text.getText().toString());
                 signUpDriver.setYear(year_text.getText().toString());
@@ -312,7 +318,9 @@ public class Sign_up extends AppCompatActivity {
 
     //If the user already have the accountm, click on the button to get to the log in page
     private void goto_login(){
-        setContentView(R.layout.activity_log_in);
+        //setContentView(R.layout.activity_log_in);
+        Intent loginIntent = new Intent(this, LogInActivity.class);
+        startActivity(loginIntent);
     }
 
 
