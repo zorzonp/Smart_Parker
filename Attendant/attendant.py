@@ -15,6 +15,7 @@
 import os
 import queue
 import threading
+import invoicing
 import time
 import sqlite3
 import base64
@@ -211,7 +212,7 @@ def calc_price(inTime, outTime):
 # Purpose:  This function queries the remote database for the
 #           PayPal account name associated with the plate, and
 #           submit an invoice.
-def send_invoice(userData,plateString,plateState,price):
+def send_invoice(userData,plateString,plateState,price,inv):
     acct = ''
     params = {'username':userData['username'],
         'password':userData['password'],
@@ -231,7 +232,16 @@ def send_invoice(userData,plateString,plateState,price):
         return -1
     else:
         acct = obj['result']['email']
-        print('Sending invoice for %0.2f to account %s' % (price,acct))
+        invID = inv.Draft(price,acct,'Thanks for parking or whatever')
+        if(invID == ''):
+            print('Error drafting invoice to %s for %0.2f' % (acct,price))
+            return -1
+        else:
+            r = inv.Send()
+            if(r == -1):
+                print('Error sending invoice')
+                return -1
+        print('Sending invoice %s for %0.2f to account %s' % (invID,price,acct))
         return 0
 
 # open_gate()
@@ -294,6 +304,7 @@ if __name__ == '__main__':
     params = [[0,'in','camera0'],[1,'out','camera1']]
     openalpr_key = load_alpr_key()
     user_cred = sp_cred.load_cred()
+    inv = invoicing.Invoicer('../../Paypal_Key.txt')
     if(len(openalpr_key) > 0 and len(user_cred['username']) > 0):
         t = []
         mQ = []
@@ -329,7 +340,8 @@ if __name__ == '__main__':
                             if(r >= 0):
                                 p = calc_price(timeIn,req['timestamp']) # Calculate the price.
                                 if(p > 0):
-                                    send_invoice(user_cred,number,state, p)
+                                    # Send invoice.
+                                    send_invoice(user_cred,number,state,p,inv)
                                 open_gate(req['ID'])
                 else:
                     mQ[req['ID']].put({'result':result,'ID':req['ID']})
