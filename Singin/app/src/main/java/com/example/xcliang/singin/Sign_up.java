@@ -27,6 +27,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
+import android.os.Handler;
+import android.os.Message;
+
 
 
 
@@ -77,10 +81,12 @@ public class Sign_up extends AppCompatActivity {
         Button btn1=(Button)findViewById(R.id.btn_button1);
         Button button_to_login=(Button)findViewById(R.id.btn_button_to_login);
 
+        //add a progress dialog
         //goes to the second sign up page
         btn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 signUpDriver.setUsername(username_text.getText().toString());
                 signUpDriver.setFirstName(firstname_text.getText().toString());
                 signUpDriver.setLastName(lastname_text.getText().toString());
@@ -90,9 +96,29 @@ public class Sign_up extends AppCompatActivity {
             }
         });
 
+
         button_to_login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                final ProgressDialog progressDialog;
+                progressDialog = new ProgressDialog(Sign_up.this);
+                progressDialog.setMessage("Loading...");
+                progressDialog.setTitle("ProgressDialog");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show(); // Display Progress Dialog
+                progressDialog.setCancelable(false);
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Thread.sleep(500);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        progressDialog.dismiss();
+                    }
+                }).start();
+
+
                 goto_login();
             }
         });
@@ -336,6 +362,25 @@ public class Sign_up extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v){
+               final ProgressDialog progressDialog;
+               progressDialog = new ProgressDialog(Sign_up.this);
+               progressDialog.setMessage("Loading..."); // Setting Message
+               progressDialog.setTitle("ProgressDialog");
+               progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+               progressDialog.show(); // Display Progress Dialog
+               progressDialog.setCancelable(false);
+               new Thread(new Runnable() {
+                   public void run() {
+                       try {
+                           Thread.sleep(800);
+                       } catch (Exception e) {
+                           e.printStackTrace();
+                       }
+                       progressDialog.dismiss();
+                   }
+               }).start();
+
+
                signUpDriver.setEmail(email.getText().toString());
 
                 //create an instance of the async task that communicates with server and
