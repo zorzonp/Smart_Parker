@@ -77,67 +77,13 @@ public class Sign_up extends AppCompatActivity {
         Button btn1=(Button)findViewById(R.id.btn_button1);
         Button button_to_login=(Button)findViewById(R.id.btn_button_to_login);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-||||||| f28f9a5... fix the progress dialog
-        //add a progress dialog
-=======
-        //try to add a progress dialog
-        //ProgressDialog progressDialog;
 
-//        btn1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                final progressDialog = new ProgressDialog(Sign_up.this);
-//                progressDialog.setMessage("Loading..."); // Setting Message
-//                progressDialog.setTitle("ProgressDialog");
-//                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//                progressDialog.show(); // Display Progress Dialog
-//                progressDialog.setCancelable(false);
-//                new Thread(new Runnable() {
-//                    public void run() {
-//                        try {
-//                            Thread.sleep(10000);
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                        progressDialog.dismiss();
-//                    }
-//                }).start();
-//            }
-//        });
         
 
->>>>>>> parent of f28f9a5... fix the progress dialog
-||||||| 16f7c13... add loading dialog(unfinished)
-        //try to add a progress dialog
-        //ProgressDialog progressDialog;
 
-//        btn1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                final progressDialog = new ProgressDialog(Sign_up.this);
-//                progressDialog.setMessage("Loading..."); // Setting Message
-//                progressDialog.setTitle("ProgressDialog");
-//                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//                progressDialog.show(); // Display Progress Dialog
-//                progressDialog.setCancelable(false);
-//                new Thread(new Runnable() {
-//                    public void run() {
-//                        try {
-//                            Thread.sleep(10000);
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                        progressDialog.dismiss();
-//                    }
-//                }).start();
-//            }
-//        });
         
 
-=======
->>>>>>> parent of 16f7c13... add loading dialog(unfinished)
+
         //goes to the second sign up page
         btn1.setOnClickListener(new View.OnClickListener(){
             @Override
