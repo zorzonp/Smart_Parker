@@ -675,7 +675,6 @@ id button2
 id button3
 id button4
 id buttonPanel
-id cancelBtn
 id center
 id center_horizontal
 id center_vertical
@@ -777,7 +776,6 @@ id src_over
 id start
 id stateView
 id submenuarrow
-id submitBtn
 id submit_area
 id tabMode
 id tag_transition_group
@@ -934,7 +932,6 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
-string cancelBtn
 string color
 string email
 string fname_signup
@@ -950,7 +947,6 @@ string search_menu_title
 string signup
 string state
 string status_bar_notification_info_overflow
-string submitBtn
 string uname_login
 string update
 string year
