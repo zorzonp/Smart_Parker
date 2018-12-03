@@ -1,20 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Sun Dec 02 21:32:40 EST 2018
-base.0=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/9
-||||||| f28f9a5... fix the progress dialog
-#Mon Dec 03 12:16:52 EST 2018
+#Mon Dec 03 17:06:13 EST 2018
 base.0=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/9
-=======
-#Mon Dec 03 10:13:46 EST 2018
-base.0=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/9
->>>>>>> parent of f28f9a5... fix the progress dialog
 path.0=classes.dex
 renamed.0=classes.dex
-||||||| 16f7c13... add loading dialog(unfinished)
-=======
-#Sun Dec 02 21:32:40 EST 2018
-base.0=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/9
-path.0=classes.dex
-renamed.0=classes.dex
->>>>>>> parent of 16f7c13... add loading dialog(unfinished)
