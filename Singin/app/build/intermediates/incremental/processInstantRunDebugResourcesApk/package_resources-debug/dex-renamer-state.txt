@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 #Sun Dec 02 21:32:37 EST 2018
+||||||| f28f9a5... fix the progress dialog
+#Mon Dec 03 10:27:37 EST 2018
+=======
+#Mon Dec 03 10:13:41 EST 2018
+>>>>>>> parent of f28f9a5... fix the progress dialog

@@ -6,9 +6,19 @@
     density="420dpi"
     format="10"
     plugin-version="3.2.0"
+<<<<<<< HEAD
     timestamp="1543804356662"
     token="-7134210018903428024"
     verifier="FULL_BUILD_REQUESTED" >
+||||||| f28f9a5... fix the progress dialog
+    timestamp="1543857410299"
+    token="-5673538715033371175"
+    verifier="COLD_SWAP_REQUESTED" >
+=======
+    timestamp="1543850547972"
+    token="-5673538715033371175"
+    verifier="FULL_BUILD_REQUESTED" >
+>>>>>>> parent of f28f9a5... fix the progress dialog
 
     <task
         name="javac"
@@ -18,15 +28,64 @@
         duration="0" />
     <task
         name="instant-run-transform"
+<<<<<<< HEAD
         duration="121" />
+||||||| f28f9a5... fix the progress dialog
+        duration="23" />
+=======
+        duration="0" />
+>>>>>>> parent of f28f9a5... fix the progress dialog
     <task
         name="verifier"
+<<<<<<< HEAD
         duration="76" />
+||||||| f28f9a5... fix the progress dialog
+        duration="5" />
+=======
+        duration="0" />
+>>>>>>> parent of f28f9a5... fix the progress dialog
 
     <artifact
+<<<<<<< HEAD
         location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+||||||| f28f9a5... fix the progress dialog
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+=======
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
         type="SPLIT" />
     <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+>>>>>>> parent of f28f9a5... fix the progress dialog
+        type="SPLIT" />
+    <artifact
+<<<<<<< HEAD
         location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
         type="SPLIT" />
     <artifact
@@ -62,16 +121,47 @@
     <artifact
         location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
         type="SPLIT_MAIN" />
+||||||| f28f9a5... fix the progress dialog
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
+=======
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        type="SPLIT" />
+>>>>>>> parent of f28f9a5... fix the progress dialog
 
     <build
         build-mode="FULL"
+<<<<<<< HEAD
         timestamp="1543804356662"
+||||||| f28f9a5... fix the progress dialog
+        timestamp="1543855612325"
+=======
+        timestamp="1543850547972"
+>>>>>>> parent of f28f9a5... fix the progress dialog
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
+<<<<<<< HEAD
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+||||||| f28f9a5... fix the progress dialog
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+=======
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+>>>>>>> parent of f28f9a5... fix the progress dialog
             type="SPLIT" />
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -98,14 +188,45 @@
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
+<<<<<<< HEAD
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+||||||| f28f9a5... fix the progress dialog
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+=======
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+>>>>>>> parent of f28f9a5... fix the progress dialog
             type="SPLIT" />
         <artifact
+<<<<<<< HEAD
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+||||||| f28f9a5... fix the progress dialog
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1543857410299"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+=======
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+>>>>>>> parent of f28f9a5... fix the progress dialog
+            type="SPLIT" />
+<<<<<<< HEAD
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
+||||||| f28f9a5... fix the progress dialog
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+=======
+>>>>>>> parent of f28f9a5... fix the progress dialog
     </build>
 
 </instant-run>
