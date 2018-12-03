@@ -205,8 +205,15 @@ public class UpdateUserActivity extends AppCompatActivity {
 
 
 
+
+
     }
 
+    private JSONObject updateUser(String oldUserName, String  oldPassword, newUserName, newPassword, first_name,
+                                  last_name, salt, plate, state, make, model, year, color, email,
+                                  url){
+
+    }
 
 
     //this procedure will query the server for the user's salt. You must provide the username
