@@ -27,8 +27,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="         Smart Parker"
+        android:text="           Smart Parker"
         android:textSize="100px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="                     Sign up"
+        android:textSize="80px" />
 
 
     <TableRow>
