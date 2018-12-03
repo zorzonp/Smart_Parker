@@ -1,18 +1,18 @@
 #Internal package file, do not edit.
-#Mon Dec 03 17:06:13 EST 2018
+#Mon Dec 03 17:13:12 EST 2018
 4.path=classes.dex
 8.set=DEX
 6.path=classes.dex
 0.baseType=DIRECTORY
 10.path=classes.dex
 5.baseType=DIRECTORY
-1.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/18
+1.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/16
 8.path=classes.dex
-3.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/19
+3.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/18
 4.set=DEX
-5.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/17
-7.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/15
-9.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/21
+5.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/15
+7.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/17
+9.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/21
 1.baseType=DIRECTORY
 0.set=DEX
 6.baseType=DIRECTORY
@@ -25,16 +25,16 @@
 3.path=classes.dex
 10.set=DEX
 5.path=classes.dex
-0.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/20
+0.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/20
 7.path=classes.dex
 9.path=classes.dex
 6.set=DEX
-2.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/16
-4.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/14
+2.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/19
+4.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/12
 3.baseType=DIRECTORY
-6.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/12
-10.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/11
-8.base=/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/13
+6.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/14
+10.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/13
+8.base=/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/transforms/dexMerger/debug/11
 2.set=DEX
 8.baseType=DIRECTORY
 9.set=DEX
