@@ -1,16 +1,117 @@
 <html>
         <head>
                 <title>Smart Parker</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                <link rel="stylesheet" href="style/style.css">
+
         </head>
         <body>
+                <div id="top"></div>
+                <nav class="navbar navbar-inverse bu_color fixnav">
+                        <div class="container-fluid bu_color">
+                                <div class="navbar-header bu_color">
+                                        <a class="navbar-brand" href="#top">Smart Parker</a>
+                                </div>
+                                <ul class="nav navbar-nav bu_color">
+                                        <li class="bu_color"><a href="#how_to">How to Use</a></li> 
+
+                                        <li class="bu_color"><a href="#faq">FAQ</a></li> 
+
+                                        <li class="bu_color"><a href="#about">About</a></li> 
+
+                                        <li class="bu_color"><a href="#demo">Demo</a></li>
+                                   
+                                        
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+                                </ul>
+                        </div>
+                </nav>
+
                 <div>
-                        <h1>Smart Parker Project</h1>
-                        <h3>Ec601 - A1</h3>
-                        <h4>Boston University</h4>
+                       
+                        <img class="title_image" src="images/smart_parker.jpg">
+                        <div class="title_block ">
+                                <h1 class="title">Smart Parker Project</h1>
+                                <h3 class="subtitle">EC601 - A1</h3>
+                                <h4 class="subsubtitle">Boston University</h4>
+                                <h5 class="subsubtitle">Xiaocheng Liang</h5>
+                                <h5 class="subsubtitle">Charles Mcpherson</h5>
+                                <h5 class="subsubtitle">Peter Zorzonello</h5>
+                        </div>
                 </div>
-                <div>
+                <div class="red_section">
+                        <h2 id="how_to" class="title subsection">How to Use</h2>
+                        
+                        <div id="parent">
+                                <div class="aligned_div">
+                                        <h3 class="subsubtitle">Step 1</h3>
+                                        <p class="subsubtitle">Download our Android app and sign up.</p>
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/android.png">
+                                </div><div class="aligned_div">
+                                        <h3 class="subsubtitle">Step 2</h3>
+                                        <p class="subsubtitle">Drive up. Our camera take a picure of your plate.</p>
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/camera.png">
+                                </div><div class="aligned_div">
+                                        <h3 class="subsubtitle">Step 3</h3>
+                                        <p class="subsubtitle">If you are in good standing, the gate opens. Drive in.</p>
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/gate.png">
+                                </div><div class="aligned_div">
+                                        <h3 class="subsubtitle">Step 4</h3>
+                                        <p class="subsubtitle">Leave when you are ready, don't worry we'll bill you.</p>
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/bill.png">
+                                </div>
+                        </div>
+                </div>
+                <div class="white_section">
+                        <h2 id="faq" class="title subsection">FAQ</h2>
+                        <ul>
+                                <li class="question">What is <span style="color:#CC0001;">Smart Parker</span>
+                                        <blockquote class="answer"><span style="color:#CC0001;">Smart Parker</span> is a parking platform that uses image recogniation to charge patrons. You sign up on the Android app with your license plate and email address. Wehn you show up we take a photo of your license plate. When you leave we take another picture. We use these to determine how long you were in the parking lot and then we bill you. <span style="color:#CC0001;">Smart Parker</span> cuts out the need to interact with any outside elements once you arrive at one of our facilities.</blockquote>
+                                </li>
+                                <li class="question">What is good standing? How to I maintain good standing?
+                                        <blockquote class="answer">We will send you an invoice from PayPal. If you pay your invoices ontime you will remain in good standing. You MUST pay your invoice before you can use the service again.</blockquote>
+                                </li>
+                        </ul>
+                </div>
+                <div class="red_section">
+                        <h2 id="about" class="title subsection">About</h2>
+                        <h3>Technologies</h3>
+                                <div class="aligned_div">
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/aws.png">
+                                        <h3 class="subsubtitle">AWS</h3>
+                                </div><div class="aligned_div">
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/openalpr.png">
+                                        <h3 class="subsubtitle">OpenAPLR</h3>
+                                </div><div class="aligned_div">
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/paypal.png">
+                                        <h3 class="subsubtitle">PayPal</h3>
+                                </div><div class="aligned_div">
+                                        <img style="max-width: 50%;max-height: 50%;" src="images/boostrap.png">
+                                        <h3 class="subsubtitle">Bootstrap</h3>
+                                </div>
+                        <h3>Sources</h3>
+                        <ul>
+                                <li>https://en.wikipedia.org/wiki/File:Android_robot_2014.svg - android image</li>
+                                <li>https://pixabay.com/en/camera-cctv-security-cam-watching-156730/ - camera</li>
+                                <li>https://pixabay.com/en/barrier-guardrail-limit-bar-146122/ - gate</li>
+                                <li>https://pixabay.com/en/bill-document-buy-shopping-1708867/ - bill</li>
+                                <li>https://commons.wikimedia.org/wiki/File:Boostrap_logo.svg - bootstrap</li>
+                                <li>https://commons.wikimedia.org/wiki/File:AmazonWebservices_Logo.svg -aws</li>
+                                <li>https://pixabay.com/en/paypal-logo-brand-pay-payment-784404 - paypal/</li>
+                                <li>http://www.openalpr.com/assets/images/openalpr_square.png - openaplr</li>
+                        </ul>
+                </div>
+                <div class="white_section">
+                        <h2 id="demo" class="title subsection">Demo</h2>
+                        <p style="text-align: center;">This button will bring you to a temporary form where we can test the PHP scripts on the server to make sure they perform correctly.<br/>
+                        Once the project is finalized this link will be removed. THIS IS FOR TESTING PURPOSES ONLY.</p>
                         <form action="demo_db.php">
-                                <input type="submit" value="Demo the DB" />
+                                <input class="button btn btn-primary"" type="submit" value="Demo the DB" />
                         </form>
                 </div>
         </body>

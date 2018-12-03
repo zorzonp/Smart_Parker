@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Singin</string>
+    <string name="uname_login">Username:</string>
+    <string name="fname_signup">Fisrt Name:</string>
+    <string name="laname_signup">Last Name:</string>
+    <string name="password_signup">Password:</string>
+    <string name="license_num">License Plate Number:</string>
+    <string name="state">State:</string>
+    <string name="make">Make:</string>
+    <string name="model">Model:</string>
+    <string name="year">Year:</string>
+    <string name="color">Color:</string>
+    <string name="email">Email Address:</string>
+    <string name="proj_name">Smart Parker</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="update">Update Info</string>
+    <string name="signup">Sign Up</string>
+    <string name="submitBtn">Submit</string>
+    <string name="cancelBtn">Cancel</string>
 </resources>
