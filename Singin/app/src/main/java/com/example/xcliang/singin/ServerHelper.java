@@ -1,6 +1,8 @@
 package com.example.xcliang.singin;
 
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -65,29 +67,15 @@ public class ServerHelper {
         return text;
     }
 
-    //TODO: Salt the password and then hash it
-    public String salt_and_hash(String salt, String password){
-        String hash = "";
+    //Generates a salted and hashed password
+    public String salt_and_hash( String salt, String password){
+        String hash = BCrypt.hashpw(password, salt);
         return hash;
     }
 
     //This function will generate a random salt that can be concatinated with a password.
-    //The salt returned will always be 10 characters long.
     public String genSalt(){
-        String salt = "";
-
-        //create an instance of a random number generator
-        Random rand = new Random();
-
-        //create a 10 character long salt
-        for(Integer i = 0; i <= 10; i++){
-            int n = rand.nextInt(127);
-            char c = (char) n;
-            salt = salt + c;
-        }
-        //System.out.println("New SALT: " + salt);
-
-        //return the salt to the user
+        String salt = BCrypt.gensalt();
         return salt;
     }
 

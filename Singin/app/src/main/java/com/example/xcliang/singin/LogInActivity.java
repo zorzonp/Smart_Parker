@@ -1,8 +1,11 @@
 package com.example.xcliang.singin;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.EditText;
 
@@ -28,6 +31,7 @@ public class LogInActivity extends AppCompatActivity {
     String plain_password;
     String salt = "";
     User driver;
+    Integer userStatus;
 
     ServerHelper helper = new ServerHelper();
 
@@ -48,13 +52,20 @@ public class LogInActivity extends AppCompatActivity {
     //Create a class for each request type to the server
     private class MyTask extends AsyncTask<Void, Void, Void>{
 
+        AlertDialog alertDialog;
+        Integer status = 0;
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+            alertDialog = new AlertDialog.Builder(LogInActivity.this).create();
+        }
 
         @Override
         protected Void doInBackground(Void... params){
 
 
             try{
-                getSalt(username, url);
+                status = getSalt(username, url);
 
 
             }catch (Exception e){
@@ -65,15 +76,37 @@ public class LogInActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result){
+
+
             super.onPostExecute(result);
+            if (status == 1){
+                alertDialog.setTitle("Alert");
+                alertDialog.setMessage("Could not find user");
+                alertDialog.setCanceledOnTouchOutside(false);
+                alertDialog.setButton(Dialog.BUTTON_NEGATIVE,"Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                alertDialog.show();
+            }
         }
     }
 
     private  class MyGetUserTask extends AsyncTask<Void, Void, Void>{
+
+        AlertDialog alertDialog;
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+            alertDialog = new AlertDialog.Builder(LogInActivity.this).create();
+        }
+
         @Override
         protected  Void doInBackground(Void... params){
             try{
-                driver = getUserInfo(username, plain_password, getUserURL);
+                userStatus = getUserInfo(username, plain_password, getUserURL);
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -83,6 +116,19 @@ public class LogInActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result){
             super.onPostExecute(result);
+
+            if (userStatus == 1){
+                alertDialog.setTitle("Alert");
+                alertDialog.setMessage("Username and password do not match.");
+                alertDialog.setCanceledOnTouchOutside(false);
+                alertDialog.setButton(Dialog.BUTTON_NEGATIVE,"Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                alertDialog.show();
+            }
         }
     }
 
@@ -120,10 +166,12 @@ public class LogInActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            //navigate to the display page
-            Intent intent = new Intent(this, DisplayUser.class);
-            intent.putExtra("user", driver);
-            startActivity(intent);
+            if (userStatus == 0){
+                //navigate to the display page
+                Intent intent = new Intent(this, DisplayUser.class);
+                intent.putExtra("user", driver);
+                startActivity(intent);
+            }
         }
 
 
@@ -137,12 +185,12 @@ public class LogInActivity extends AppCompatActivity {
 
     //This function will take a username, and password from the user
     //and send it as a POST request to url_name. It will read the response and inform the user.
-    public User getUserInfo(String username, String password, String url_name)
+    public Integer getUserInfo(String username, String password, String url_name)
             throws UnsupportedEncodingException{
 
 
         //salt and hash the password
-        //password = salt_and_hash(salt, password);
+        password = helper.salt_and_hash(salt, password);
 
         //encode the data we want to send to the server for this request
         String data = URLEncoder.encode("username", "UTF-8") + "=" +
@@ -194,11 +242,13 @@ public class LogInActivity extends AppCompatActivity {
 
                     //create the user
                     User user = new User(fName, lName, uName, plate, state, make, model, year, color, email, standing, password);
-                    user.print();
-                    return user;
+                    //user.print();
+                    driver = user;
+                    return 0;
                 } else {//if the request for a salt was not successful
                     String message = obj.getString("message");
                     System.out.println(message);
+                    return 1;
 
                 }
             }catch (Exception e){
@@ -207,12 +257,12 @@ public class LogInActivity extends AppCompatActivity {
         }
 
         //return the user to the task
-        return null;
+        return 1;
     }
 
     //this procedure will query the server for the user's salt. You must provide the username
     //for the salt you are requesting.
-    public void getSalt(String username, String url_name) throws UnsupportedEncodingException {
+    public Integer getSalt(String username, String url_name) throws UnsupportedEncodingException {
 
         //encode the data we want to send to the server for this request
         String data = URLEncoder.encode("username", "UTF-8") + "=" +
@@ -249,18 +299,20 @@ public class LogInActivity extends AppCompatActivity {
                 JSONObject result_obj = new JSONObject(results_str);
 
                 salt = result_obj.getString("salt");
+                return 0;
 
 
             } else {//if the request for a salt was not successful
 
                 String message = obj.getString("message");
                 System.out.println(message);
-
+                return 1;
             }
 
 
         } catch (Exception e){
             e.printStackTrace();
+            return 1;
         }
     }
 

@@ -1,7 +1,10 @@
 package com.example.xcliang.singin;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -21,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 
@@ -39,6 +43,8 @@ public class Sign_up extends AppCompatActivity {
     private EditText year_text;
     private EditText color_text;
     private EditText email;
+
+    JSONObject objReturn;
 
 
 
@@ -102,6 +108,14 @@ public class Sign_up extends AppCompatActivity {
     //Create a class for each request type to the server
     private class signUpTask extends AsyncTask<String, Void, Void> {
 
+        AlertDialog alertDialog;
+
+
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+            alertDialog = new AlertDialog.Builder(Sign_up.this).create();
+        }
 
         @Override
         protected Void doInBackground(String... params){
@@ -122,7 +136,7 @@ public class Sign_up extends AppCompatActivity {
 
             try{
 
-                getinfo_signup(username, password, fname, lname, license_num, state, make,
+                objReturn = getinfo_signup(username, password, fname, lname, license_num, state, make,
                         model, year, color, email, url);
 
 
@@ -135,6 +149,36 @@ public class Sign_up extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result){
             super.onPostExecute(result);
+
+            //get the Status from the returned JSON object
+            String status_str = null;
+            try {
+                status_str = objReturn.getString("status");
+
+
+                //convert the Status from a string to an int
+                Integer status = Integer.parseInt(status_str);
+
+                if (status == 0){
+                    alertDialog.setTitle("Alert");
+                    String message = objReturn.getString("message");
+                    String errorCheck = "23000";
+                    if( message.toLowerCase().contains(errorCheck.toLowerCase())){
+                        message = "Username is already taken. Please select a different name.";
+                    }
+                    alertDialog.setMessage(message);
+                    alertDialog.setCanceledOnTouchOutside(false);
+                    alertDialog.setButton(Dialog.BUTTON_NEGATIVE,"Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    alertDialog.show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -229,6 +273,7 @@ public class Sign_up extends AppCompatActivity {
         //when the user hits the very first button on the very first sign up page
         setContentView(R.layout.activity_signin);
         Button btn1=(Button)findViewById(R.id.btn_button1);
+        Button button_to_login=(Button)findViewById(R.id.btn_button_to_login);
 
         username_text = (EditText)findViewById(R.id.username_signup_field);
         firstname_text = (EditText)findViewById(R.id.firstname_signup_field);
@@ -239,6 +284,13 @@ public class Sign_up extends AppCompatActivity {
         firstname_text.setText(signUpDriver.firstName);
         lastname_text.setText(signUpDriver.lastName);
         password_text.setText(signUpDriver.password_hash);
+
+        button_to_login.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                goto_login();
+            }
+        });
 
         //goes to the second signup page
         btn1.setOnClickListener(new View.OnClickListener(){
@@ -297,10 +349,26 @@ public class Sign_up extends AppCompatActivity {
                            signUpDriver.make, signUpDriver.model,
                            signUpDriver.year, signUpDriver.color, signUpDriver.email).get();
 
-                   //navigate to the display page
-                   Intent displayIntent = new Intent(Sign_up.this, DisplayUser.class);
-                   displayIntent.putExtra("user", signUpDriver);
-                   startActivity(displayIntent);
+
+                   String status_str = null;
+                   try {
+                       status_str = objReturn.getString("status");
+
+
+
+                       //convert the Status from a string to an int
+                       Integer status = Integer.parseInt(status_str);
+
+                       if (status != 0) {
+                           //navigate to the display page
+                           Intent displayIntent = new Intent(Sign_up.this, DisplayUser.class);
+                           displayIntent.putExtra("user", signUpDriver);
+                           startActivity(displayIntent);
+                       }
+
+                   } catch (JSONException e) {
+                       e.printStackTrace();
+                   }
 
                } catch (ExecutionException e) {
                    e.printStackTrace();
@@ -316,7 +384,7 @@ public class Sign_up extends AppCompatActivity {
         });
     }
 
-    //If the user already have the accountm, click on the button to get to the log in page
+    //If the user already have the account, click on the button to get to the log in page
     private void goto_login(){
         //setContentView(R.layout.activity_log_in);
         Intent loginIntent = new Intent(this, LogInActivity.class);
@@ -328,12 +396,13 @@ public class Sign_up extends AppCompatActivity {
 
 
 
-    public void getinfo_signup(String username, String password, String firstname, String lastname,
+    public JSONObject getinfo_signup(String username, String password, String firstname, String lastname,
                                String licencenum, String licencestate, String make, String model,
                                String year, String color, String venmo_uname, String url_name)
             throws UnsupportedEncodingException {
 
         String salt = helper.genSalt();
+        password = helper.salt_and_hash(salt, password);
 
         //create parameter sended to the server
         String data = URLEncoder.encode("username", "UTF-8") + "=" +
@@ -380,12 +449,14 @@ public class Sign_up extends AppCompatActivity {
                     String message = obj.getString("message");
                     System.out.println(message);
                 }
+                return obj;
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
-
+    return null;
     }
 
 
