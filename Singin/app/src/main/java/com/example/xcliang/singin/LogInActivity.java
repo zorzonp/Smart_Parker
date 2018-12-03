@@ -20,6 +20,8 @@ import java.util.concurrent.ExecutionException;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import android.app.ProgressDialog;
+
 public class LogInActivity extends AppCompatActivity {
 
     EditText uname_text;
@@ -137,6 +139,26 @@ public class LogInActivity extends AppCompatActivity {
     //This procedure is triggered by the Login button.
     //It will call the required tasks to communicate with the server
     public void login(View view){
+        //add a progress dialog before the program get user info
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(LogInActivity.this);
+        progressDialog.setMessage("Loading..."); // Setting Message
+        progressDialog.setTitle("ProgressDialog");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show(); // Display Progress Dialog
+        progressDialog.setCancelable(false);
+        new Thread(new Runnable() {
+            public void run() {
+                try {
+                    Thread.sleep(800);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                progressDialog.dismiss();
+            }
+        }).start();
+
+
         //get the values from the text boxes on the page
         username = uname_text.getText().toString();
         plain_password = pword_text.getText().toString();
@@ -179,6 +201,25 @@ public class LogInActivity extends AppCompatActivity {
 
 
     public void signUp(View view){
+        //add a progress dialog before the program gets to the sign up page
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(LogInActivity.this);
+        progressDialog.setMessage("Loading..."); // Setting Message
+        progressDialog.setTitle("ProgressDialog");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show(); // Display Progress Dialog
+        progressDialog.setCancelable(false);
+        new Thread(new Runnable() {
+            public void run() {
+                try {
+                    Thread.sleep(800);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                progressDialog.dismiss();
+            }
+        }).start();
+
         Intent signupIntent = new Intent(this, Sign_up.class);
         startActivity(signupIntent);
     }

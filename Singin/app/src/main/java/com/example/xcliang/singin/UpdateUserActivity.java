@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import android.app.ProgressDialog;
+
 public class UpdateUserActivity extends AppCompatActivity {
 
     User origonalDriver;
@@ -75,6 +77,26 @@ public class UpdateUserActivity extends AppCompatActivity {
     }
 
     public void submitBtnPressed(View view){
+        //add a progress dialog before the program get user info
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(UpdateUserActivity.this);
+        progressDialog.setMessage("Loading..."); // Setting Message
+        progressDialog.setTitle("ProgressDialog");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show(); // Display Progress Dialog
+        progressDialog.setCancelable(false);
+        new Thread(new Runnable() {
+            public void run() {
+                try {
+                    Thread.sleep(800);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                progressDialog.dismiss();
+            }
+        }).start();
+
+
         //check each field to see if it changed if it did then update the driver user
         User newDriverInfo = origonalDriver;
         if (usernameText.getText().toString() != origonalDriver.username){
