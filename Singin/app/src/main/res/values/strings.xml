@@ -18,4 +18,5 @@
     <string name="signup">Sign Up</string>
     <string name="submitBtn">Submit</string>
     <string name="cancelBtn">Cancel</string>
+    <string name="updateNewPassword">New Password:</string>
 </resources>

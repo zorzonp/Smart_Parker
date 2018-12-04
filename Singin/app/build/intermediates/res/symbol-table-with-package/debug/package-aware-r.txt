@@ -953,6 +953,7 @@ string status_bar_notification_info_overflow
 string submitBtn
 string uname_login
 string update
+string updateNewPassword
 string year
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
