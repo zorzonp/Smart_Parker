@@ -5,8 +5,9 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="CLASS_ADDED"
     plugin-version="3.2.0"
-    timestamp="1543901635201"
+    timestamp="1543902282961"
     token="-5673538715033371175"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -18,13 +19,13 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="138" />
     <task
         name="verifier"
-        duration="0" />
+        duration="62" />
 
     <artifact
-        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
         type="SPLIT" />
     <artifact
         location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
@@ -80,6 +81,15 @@
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1543902282961"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
             location="/Users/xcliang/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
