@@ -27,8 +27,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="         Smart Parker"
+        android:text="Smart Parker"
+        android:gravity="center"
         android:textSize="100px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:gravity="center"
+        android:textSize="70px" />
 
 
     <TableRow>
@@ -121,15 +129,17 @@
 
         <Button
             android:id="@+id/btn_button_to_login"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="Goto_Loginpage"
             android:text="Log In" />
 
         <Button
             android:id="@+id/btn_button1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="Goto_secondpage"
             android:text="Next" />
 
