@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Singin</string>
+    <string name="app_name">Smart Parker</string>
     <string name="uname_login">Username:</string>
     <string name="fname_signup">Fisrt Name:</string>
     <string name="laname_signup">Last Name:</string>
