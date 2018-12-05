@@ -34,6 +34,7 @@ TOP_LEVEL_PATH = './'
 TIME_DILATION = 200 # Dilate time by a factor of 200 for testting
 ALPR_KEY = '../../ALPR_Key.txt' # Location of ALPR key
 MIN_CONF = 70 # Minimum confidence for ALPR result.
+PARAMETER_FILE = './params.ini' # Parameter file.
 
 # camera_manager()
 # Purpose:  This function manages one gate at the structure and
@@ -293,6 +294,59 @@ def read_plate(fileName, key):
         print('Error: Open ALPR error = %s' % obj['error'])
     return plate # Return plate information.
 
+def read_params(fileName):
+    params = []
+    foundIn = False
+    foundOut = False
+    try:
+        with open(fileName,'r') as f:
+            for rawLine in f:
+                line = rawLine.strip() # Ignore trailing and leading whitespace.
+                if(len(line) > 0 and line[0] != '#'):
+                    parsed = line.split(',') # Parse the line.
+                    if(len(parsed) < 3): # If not enough parameters,
+                        print('Error parsing file %s at line: %s' % (fileName,rawLine))
+                        print('Not enough fields.')
+                        return {'status':-1,'params':[]}
+                    elif(len(parsed) > 3): # If too many parameters,
+                        print('Error parsing file %s at line %s' % (fileName,rawLine))
+                        print('Expected 3 fields, found %d.' % len(parsed))
+                        return {'status':-1,'params':[]}
+                    else: # If correct number of parameters, parse into dictionary.
+                        try:
+                            parameterList = {'gateID':int(parsed[0].strip()),
+                                'direction':parsed[1].strip(),
+                                'label':parsed[2].strip()}
+                        except ValueError: # Trap error where non-integer given for gateID.
+                            print('Error parsing file %s at line: %s' % (fileName,rawLine))
+                            print('Field 1 (Gate ID) must be an integer.')
+                            return {'status':-1,'params':[]}
+                        # Ensure that direction is either 'in' or 'out'
+                        if(parameterList['direction'] != 'in' and 
+                            parameterList['direction'] != 'out'):
+                                print('Error parsing paramter file at line %s' % line)
+                                print("Field 2 (Direction) must be 'in' or 'out'")
+                                return {'status':-1,'params':[]}
+                        else:
+                            # Mark entrance or exit as found.
+                            if(parameterList['direction'] == 'in'):
+                                foundIn = True
+                            else:
+                                foundOut = True
+                            # Append parameters to list.
+                            params.append(parameterList) 
+    except OSError:
+        print('ERROR - Could not open parameter file %s' % fileName)
+        return {'status':-1,'params':[]}
+    if(len(params) < 2):
+        print('ERROR - Not enough gates identified.  Must be at least 2')
+        return {'status':-1,'params':[]}
+    elif(not foundIn or not foundOut):
+        print('ERROR - Must have at least one entrance AND at least one exit')
+        return {'status':-1,'params':[]}
+    else:
+        return {'status':0,'params':params}
+
 
 if __name__ == '__main__':
 #### TEMPORARY ####
@@ -301,7 +355,10 @@ if __name__ == '__main__':
     if(not os.path.exists(TOP_LEVEL_PATH)):
         os.mkdir(TOP_LEVEL_PATH)
 ###################
-    params = [[0,'in','camera0'],[1,'out','camera1']]
+    r = read_params(PARAMETER_FILE)
+    if(r['status'] < 0):
+        quit() # Error reading parameter file.
+    params = r['params']
     openalpr_key = load_alpr_key()
     user_cred = sp_cred.load_cred()
     inv = invoicing.Invoicer('../../Paypal_Key.txt')
@@ -311,7 +368,7 @@ if __name__ == '__main__':
         q = queue.Queue()
         for i,param in enumerate(params):
             mQ.append(queue.Queue())
-            t.append(threading.Thread(target = camera_manager, args = tuple(param) + (q,mQ[i])))
+            t.append(threading.Thread(target = camera_manager, args = tuple(param.values()) + (q,mQ[i])))
         for worker in t:
             worker.setDaemon(True)
             worker.start()
