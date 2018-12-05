@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:stretchColumns="0,3"
+    android:weightSum="1"
+    tools:context=".Sign_up2"
+    android:background="@drawable/backing">
+
+    <TableRow android:layout_marginTop="20px">
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/license_num"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/licencenum_signup_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow
+        android:layout_height="34dp"
+        android:layout_marginTop="20px">
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/state"
+            android:textSize="48px" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/make_signup_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/model"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/model_signup_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/year_signup_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:digits="1234567890"
+            android:inputType="text|numberDecimal"
+            android:maxLength="4"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="20px">
+
+        <TextView />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color"
+            android:textSize="48px" />
+
+        <EditText
+            android:id="@+id/color_signup_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:minWidth="440px"
+            android:textSize="48px" />
+
+        <TextView />
+    </TableRow>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_button2_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/btn_button2_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next" />
+
+    </LinearLayout>
+
+</TableLayout>
