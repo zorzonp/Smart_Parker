@@ -952,7 +952,8 @@ int string status_bar_notification_info_overflow 0x7f0b0037
 int string submitBtn 0x7f0b0038
 int string uname_login 0x7f0b0039
 int string update 0x7f0b003a
-int string year 0x7f0b003b
+int string updateNewPassword 0x7f0b003b
+int string year 0x7f0b003c
 int style AlertDialog_AppCompat 0x7f0c0000
 int style AlertDialog_AppCompat_Light 0x7f0c0001
 int style Animation_AppCompat_Dialog 0x7f0c0002
