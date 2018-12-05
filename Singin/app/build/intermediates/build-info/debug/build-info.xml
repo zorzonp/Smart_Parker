@@ -5,9 +5,8 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="FIELD_ADDED"
     plugin-version="3.2.0"
-    timestamp="1543887838413"
+    timestamp="1544049303170"
     token="-7134210018903428024"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -19,36 +18,42 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="16" />
+        duration="0" />
     <task
         name="verifier"
-        duration="48" />
+        duration="0" />
 
-    <artifact
-        location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
     <artifact
         location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1543886235020"
+        timestamp="1544049199696"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
         <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
@@ -57,32 +62,19 @@
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
+            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1543887838413"
+        timestamp="1544049303170"
         verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
         <artifact
             location="/Users/peterzorzonello/Documents/GitHub/Smart_Parker/Singin/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
