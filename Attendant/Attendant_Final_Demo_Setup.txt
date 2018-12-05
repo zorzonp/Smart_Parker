@@ -1,0 +1,26 @@
+Setup for Final Attendant demo:
+
+1. Get an account with OpenALPR
+2. Create a key file two levels up from the 'attendant.py' application called "ALPR_Key.txt"
+3. Set up a PayPal developer account and application credentials.
+4. Create a key file two levels up from the 'attendant.py' application called "Paypal_Key.txt"
+5. Run "Register Operator.py" and set up an operator account.
+6. Set up a few buyer accounts in the PayPal sandbox.
+
+For Demo (registered user):
+
+7. Set up a user with one of these license plate numbers and linked to the email for one of the dummy PayPal accounts.
+8. Copy the corresponding image from "Demo Plates" into Attendant folder (2x, keep both).
+9. Drag one of these copies into the "camera0" folder.
+10. Wait a bit.
+11. Drag the other copy into the "camera1" folder.
+12. Wait for the invoice to show up in the Sandbox Accounts list on PayPal.
+13. Rinse and repeat all steps until demo plates are used up (except for one to demonstrate an unregistered user) and then just repeat steps 8 - 13.
+
+Alternate Demo (unregistered user):
+
+7. Copy unregistered user's corresponding image from "Demo Plates" into Attendant folder (2x, keep both).
+8. Drag one of these copies into the "camera0" folder.
+9. Wait a bit.
+10. Drag the other copy into the "camera1" folder.
+11. Wait for the invoice to show up in the Sandbox Accounts list on PayPal.
