@@ -122,11 +122,8 @@ public class UpdateUserActivity extends AppCompatActivity {
             //get all of the required parameters needed for the function
             String oldUsername = params[0];
             String oldPassword = params[1];
-            System.out.println("Old Pass: " + oldPassword);
-            System.out.println("Pass: " + pass);
             String newUsername = params[2];
             String newPassword = params[3];
-            System.out.println("New Pass: " + newPassword);
             String firstName = params[4];
             String lastName = params[5];
             String plate = params[6];
@@ -202,6 +199,21 @@ public class UpdateUserActivity extends AppCompatActivity {
         //get the info from the previous activity
         Bundle bundle = getIntent().getExtras();
         origonalDriver = bundle.getParcelable("user");
+
+        AlertDialog instructionstDialog = new AlertDialog.
+                Builder(UpdateUserActivity.this).create();
+        instructionstDialog.setTitle("Instructions");
+        instructionstDialog.setMessage("Select and update the fields you want to change. Leave the fields you want to keep. " +
+                "If you want to update the password enter a new one, otherwise leave it blank.");
+        instructionstDialog.setCanceledOnTouchOutside(false);
+        instructionstDialog.setButton(Dialog.BUTTON_NEGATIVE,"Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        instructionstDialog.show();
+
 
         //get all of the objects on the display
         usernameText = findViewById(R.id.updateUsernameText);
