@@ -4,16 +4,14 @@ The android app allows users to sign up, log in and update information of their 
 
 ## Getting started
 ### Prerequisites
-You need to have an android phone.
-Download the app on Google Play Store
-```
-The link of app
-```
-
-If you want to run the whole project, you have to download Android Studio on your computer. Here’s the link to download it.
+If you want to run the whole project:
+You have to download Android Studio on your computer. Here’s the link to download it.
 ```
 https://developer.android.com/studio/?gclid=EAIaIQobChMIr9-vooCM3wIVj5OzCh0jyAiIEAAYASABEgJ8rvD_BwE
 ```
+
+if you want to run the app on your android phone:
+Click the "app" drop down box next to the build icon, and select 'edit configuration'. If you already have the android phone connected with computer with USB line, just select USB device in Target drop down box.
 
 ### How to run
 You should clone or download the whole project on your local computer and open the project with Android Studio. 
