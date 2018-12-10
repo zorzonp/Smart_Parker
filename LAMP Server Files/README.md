@@ -9,6 +9,8 @@ Our server consists of an Amazon Web Service (AWS) Virtual Private Cloud (VPC), 
 
 To create the AWS VPC I used a tutorial found on Amazon (See Sources 1).
 
+For info about the specific functionality or the database structure visit: https://github.com/zorzonp/Smart_Parker/blob/backend_docs/LAMP%20Server%20Files/LAMP%20Server%20Manual.txt
+
 
 ## SOURCES:
 1) https://aws.amazon.com/getting-started/tutorials/create-mysql-db/ 
