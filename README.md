@@ -10,6 +10,6 @@ The smart parking solution is broken down into three major components:
 
 For more information about the Android app please visit: 
 For more information about the Python application please visit:
-For more information about the PHP/MySQL backend please visit:
+For more information about the PHP/MySQL backend please visit: https://github.com/zorzonp/Smart_Parker/blob/master/LAMP%20Server%20Files/README.md
 
 Also check out our website: https://smartparker.cf
