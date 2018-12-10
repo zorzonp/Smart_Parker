@@ -24,7 +24,7 @@ This document is for "attendant.py"
         
         c. Client ID and secret key must be obtained from PayPal.  This requires a PayPal developer account (developer.paypal.com)
 
-        d. Put these in a text file with the client ID on the first line and the secret key on the second.  Name this file "Paypal_key.txt" and put it in the same location as the "ALPR_key.txt" file.
+        d. Put these in a text file with the facilitator email account on the first line,  client ID on the second line and the secret key on the third.  Name this file "Paypal_key.txt" and put it in the same location as the "ALPR_key.txt" file.
 
         e. Copy a couple of the image files from "Demo_Plates/" into the folder containing "attendant.py" just to prepare.
 

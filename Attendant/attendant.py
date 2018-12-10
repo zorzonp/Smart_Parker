@@ -105,7 +105,6 @@ def get_entry(plateString, plateState):
         t = results[0][2]
     else:
         print('Error: No match')
-
     return t
 # log_exit()
 # Purpose:  This function queries the local occupancy database for
@@ -233,7 +232,7 @@ def send_invoice(userData,plateString,plateState,price,inv):
         return -1
     else:
         acct = obj['result']['email']
-        invID = inv.Draft(price,acct,'Thanks for parking or whatever')
+        invID = inv.Draft(price,acct,'Thanks for Parking!')
         if(invID == ''):
             print('Error drafting invoice to %s for %0.2f' % (acct,price))
             return -1
@@ -294,6 +293,11 @@ def read_plate(fileName, key):
         print('Error: Open ALPR error = %s' % obj['error'])
     return plate # Return plate information.
 
+# read_params()
+# Purpose: This function reads the parameter file.
+# Inputs: fileName - The name of the parameter file.
+# Outputs: params - A list of dictionaries containing parameters for
+#                   each gate
 def read_params(fileName):
     params = []
     foundIn = False
@@ -372,6 +376,8 @@ if __name__ == '__main__':
         for worker in t:
             worker.setDaemon(True)
             worker.start()
+
+        print('Running...')
 
         while True:
             try:
