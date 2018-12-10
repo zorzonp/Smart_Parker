@@ -7,6 +7,8 @@ Index:
 	2.2)	lookup_license.php
 	2.3)	get_salt.php
 	2.4)	add_owner.php
+	2.5)    get_self_info.php
+	2.6)	update_driver_info.php
 3) Tables
 	3.1)	users
 	3.2)	owners
@@ -21,25 +23,24 @@ Index:
 
 	2.1	ADD_CUSTOMER
 
-			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/add_customer.php
+			Address: https://smartparker.cf/add_customer.php
 
 			Inputs: Must be sent using POST. 
 				username:				STRING
 				first_name:				STRING 
 				last_name: 				STRING
-				password(as a hash):	STRING 
+				password(as a hash):			STRING 
 				salt:					STRING
-				license_num:			STRING
-				license_state:			STRING
+				license_plate:				STRING
+				state:					STRING
 				make:					STRING
 				modle:					STRING 
 				year:					INTEGER
 				color:					STRING
-				venmo_uname:			STRING
+				email:					STRING
 
 			Outputs: A JSON object: {"status":<INTEGER>,
-									 "message":<STRING>
-									}
+						 "message":<STRING>}
 
 			Description: Adds a user to the user table.
 
@@ -49,31 +50,30 @@ Index:
 
 	2.2	LOOKUP_LICENSE
 
-			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/lookup_license.php
+			Address: https://smartparker.cf/lookup_license.php
 
 			Inputs: Must be sent using POST.
 				license_plate:			STRING
-				state:					STRING
-				password(as as hash):	STRING *note: this is the password of the owner/operator making the request
-				username:				STRING *note: this is the username of the owner/operator making the request
+				state:				STRING
+				password(as as hash):		STRING *note: this is the password of the owner/operator making the request
+				username:			STRING *note: this is the username of the owner/operator making the request
 
 			Outputs: A JSON object: {"status":<INTEGER>,
-									 "message":<STRING>,
-									 "result":{
-									 			"username":<STRING>,
-									 			"first_name":<STRING>,
-									 			"last_name":<STRING>,
-									 			"password":<STRING>,
-									 			"salt":<STRING>,
-									 			"license_num":<STRING>,
-									 			"license_state":<STRING>,
-									 			"make":<STRING>,
-									 			"modle":<STRING>,
-									 			"year":<STRING>,
-									 			"color":<STRING>,
-									 			"venmo_uname":<STRING>
-									 			}
-									 }
+						 "message":<STRING>,
+						 "result":{
+								"username":<STRING>,
+								"first_name":<STRING>,
+								"last_name":<STRING>,
+								"license_num":<STRING>,
+								"license_state":<STRING>,
+								"make":<STRING>,
+								"modle":<STRING>,
+								"year":<STRING>,
+								"color":<STRING>,
+								"email":<STRING>
+								"good_standing":<STRING> *note: this is a 1 or a 0 to represent a boolean
+							}
+						}
 
 			Description: Looks up a user by their license plate and state.
 
@@ -83,15 +83,15 @@ Index:
 
 	2.3	ADD_OWNER
 
-			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/add_owner.php
+			Address: https://smartparker.cf/add_owner.php
 
 			Inputs: Must be sent using POST. 
 				username:				STRING
-				password(as a hash):	STRING 
+				password(as a hash):			STRING 
 				salt:					STRING
 
 			Outputs: A JSON object: {"status":<INTEGER>,
-									 "message":<STRING>}
+						 "message":<STRING>}
 
 			Description: Adds an owner/operator to the owner's table.
 
@@ -101,23 +101,88 @@ Index:
 
 	2.4	GET_SALT
 
-			Address: ec2-18-217-234-17.us-east-2.compute.amazonaws.com/get_salt.php
+			Address: https://smartparker.cf/get_salt.php
 
 			Inputs: Must be sent using POST.
-				username:				STRING
+				username:	STRING
+				type: 		STRING *note: this must be either user or owner
 
 			Outputs: A JSON object: {"status":<INTEGER>,
-									 "message":<STRING>,
-									 "result":{
-									 			"salt":<STRING>
-									 		  }
-									}
+						 "message":<STRING>,
+						 "result":{
+								"salt":<STRING>
+							   }
+						}
 
-			Description: This PHP script will return the salt for any user in the owner table.
+			Description: This PHP script will return the salt for any user or owner in the user or owner table.
 				The purpose of this script is to allow the calling program to get the salt so that the password can be hashed by 
 				the calling program and then the has can be sent to the server to be verified by any requests for information. 
+				Pass in user to get a user's salt and owner to get an owner's salt.
 
 			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
+
+	
+	2.5	GET_SELF_INFO
+
+			Address: https://smartparker.cf/get_self_info.php
+
+			Inputs: Must be sent using POST.
+				username:			STRING
+				password(as a hash): 		STRING
+
+			Outputs: A JSON object: {"status":<INTEGER>,
+						 "message":<STRING>,
+						 "result":{
+								"username":<STRING>,
+								"first_name":<STRING>,
+								"last_name":<STRING>,
+								"license":<STRING>,
+								"license_state":<STRING>,
+								"make":<STRING>,
+								"modle":<STRING>,
+								"year":<STRING>,
+								"color":<STRING>,
+								"email":<STRING>
+								"good_standing":<STRING> *note: this is a 1 or a 0 to represent a boolean
+							}
+						}
+
+			Description: This PHP script will return the info for a user. This is useful to use when logging in to get all of the users info for displaying.
+
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
+
+	
+
+
+	2.6	UPDATE_DRIVER_INFO
+
+			Address: https://smartparker.cf/update_driver_info.php
+
+			Inputs: Must be sent using POST.
+				username:			STRING
+				password(as a hash): 		STRING
+				first_name 			STRING
+				last_name 			STRING
+				salt 				STRING
+				license_plate 			STRING
+				state 				STRING
+				make 				STRING
+				model 				STRING
+				year 				STRING
+				color 				STRING
+				email 				STRING
+				new_uname 			STRING
+				new_password 			STRING
+			
+
+			Outputs: A JSON object: {"status":<INTEGER>,
+						 "message":<STRING>
+						}
+
+			Description: This PHP script will update an existing users information. All the fields must be set, however if they are not being updated then the original vlaues 			should be based in. For new username and new password the old password and username should be provided unless they want to update them. 
+
+			Errors: All errors are returned in the JSON object. A status of 0 and a message will be returned if an error occurred. 
+
 3 Tables
 	3.1	users
 		+---------------+-------------+------+-----+---------+-------+
@@ -127,14 +192,15 @@ Index:
 		| first_name    | varchar(20) | YES  |     | NULL    |       |
 		| last_name     | varchar(20) | YES  |     | NULL    |       |
 		| password      | char(100)   | YES  |     | NULL    |       |
-		| salt          | char(10)    | YES  |     | NULL    |       |
+		| salt          | char(30)    | YES  |     | NULL    |       |
 		| license_num   | varchar(7)  | YES  |     | NULL    |       |
 		| license_state | varchar(2)  | YES  |     | NULL    |       |
 		| make          | varchar(10) | YES  |     | NULL    |       |
-		| modle         | varchar(20) | YES  |     | NULL    |       |
+		| model         | varchar(20) | YES  |     | NULL    |       |
 		| year          | int(11)     | YES  |     | NULL    |       |
 		| color         | varchar(25) | YES  |     | NULL    |       |
-		| venmo_uname   | varchar(20) | YES  |     | NULL    |       |
+		| email	        | varchar(20) | YES  |     | NULL    |       |
+		| good_standing | tinyint(1)  | YES  |     | NULL    |       |
 		+---------------+-------------+------+-----+---------+-------+
 
 	3.2 owners
@@ -142,6 +208,6 @@ Index:
 		| Field    | Type         | Null | Key | Default | Extra |
 		+----------+--------------+------+-----+---------+-------+
 		| username | varchar(20)  | NO   | PRI | NULL    |       |
-		| salt     | char(10)     | NO   |     | NULL    |       |
+		| salt     | char(20)     | NO   |     | NULL    |       |
 		| password | varchar(100) | NO   |     | NULL    |       |
 		+----------+--------------+------+-----+---------+-------+
