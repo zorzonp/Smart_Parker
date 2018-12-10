@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/Singin/app/src/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/Singin/app/build/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/instant-run.iml" filepath="$PROJECT_DIR$/Singin/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/instant-run.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/src/main/main.iml" filepath="$PROJECT_DIR$/Singin/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/merged.iml" filepath="$PROJECT_DIR$/Singin/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/merged.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/processDebugResources.iml" filepath="$PROJECT_DIR$/Singin/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/processDebugResources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Singin/app/src/test/test.iml" filepath="$PROJECT_DIR$/Singin/app/src/test/test.iml" />
+    </modules>
+  </component>
+</project>
